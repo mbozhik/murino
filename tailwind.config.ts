@@ -1,20 +1,36 @@
-import type { Config } from "tailwindcss";
+const plugin = require('tailwindcss/plugin')
+
+import type {Config} from 'tailwindcss'
 
 const config: Config = {
-  content: [
-    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
-  ],
+  mode: 'jit',
+  content: ['./src/pages/**/*.{js,ts,jsx,tsx,mdx}', './src/components/**/*.{js,ts,jsx,tsx,mdx}', './src/app/**/*.{js,ts,jsx,tsx,mdx}'],
   theme: {
     extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      fontFamily: {
+        sans: ['var(--font-opensans)', 'ui-sans-serif', 'system-ui', '-apple-system', 'Roboto', 'sans-serif'],
+        bebas: ['var(--font-bebas)', 'ui-sans-serif', 'system-ui', '-apple-system', 'Roboto', 'sans-serif'],
+      },
+      colors: {
+        custom: {
+          green: '#387A22',
+          45: '#454545',
+          95: '#959595',
+          e4: '#E4E4E4',
+        },
       },
     },
+    screens: {
+      xl: {max: '1536px'},
+      lg: {max: '1024px'},
+      sm: {max: '768px'},
+      xs: {max: '350px'},
+    },
   },
-  plugins: [],
-};
-export default config;
+  plugins: [
+    plugin(function sizePlugin(api) {
+      api.matchUtilities({s: (value) => ({width: value, height: value})}, {values: api.theme('width')})
+    }),
+  ],
+}
+export default config
