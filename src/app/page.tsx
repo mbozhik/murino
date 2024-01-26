@@ -1,7 +1,11 @@
+import Hero from '../components/index/Hero'
+import {Button} from '@/components/ui/button'
+
 export default function Home() {
   return (
     <div>
-      <h1>мурино</h1>
+      <Hero />
+      <Button>Click me</Button>
     </div>
   )
 }
