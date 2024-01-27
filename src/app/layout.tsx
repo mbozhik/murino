@@ -43,7 +43,7 @@ export default function RootLayout({
     <html lang="ru" className="scroll-smooth">
       <body className={SuisseIntl.className}>
         {children}
-        <h1 className={`${BebasNeue.className}`}>арена</h1>
+        {/* <h1 className={`${BebasNeue.className}`}>арена</h1> */}
       </body>
     </html>
   )
