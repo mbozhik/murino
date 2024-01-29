@@ -1,15 +1,23 @@
 import Image from 'next/image'
 
-import Header from '../common/Header/Header'
-import HeroBackground from '../../assets/index/hero-background.png'
+import Header from '../ui/Header/Header'
 
-const screenHeight = '!h-[100svh] h-100vh'
+import HeroBackground from '../../assets/index/hero-background.png'
+import HeroText from '../../assets/index/hero-text.svg'
+
+const screenHeight = '!sm:h-[100svh] h-[100vh]'
 
 export default function Hero() {
   return (
-    <section id="hero" className={`relative pt-12 duration-500 bg-black ${screenHeight}`}>
+    <section id="hero" className={`relative pt-12 duration-500 ${screenHeight}`}>
       <Header />
-      <Image className="object-cover opacity-70" src={HeroBackground} fill alt="" />
+      <div className="grid h-[75vh] place-items-center">
+        <Image className="object-cover" src={HeroText} alt="" />
+      </div>
+
+      <div className="absolute inset-0 bg-black s-full -z-10">
+        <Image className="object-cover opacity-65 -z-10" src={HeroBackground} fill alt="" />
+      </div>
     </section>
   )
 }
