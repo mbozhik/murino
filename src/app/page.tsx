@@ -1,11 +1,20 @@
 import Hero from '#/Hero'
-import {Button} from '@/components/ui/button'
+const styles = 'h-screen bg-purple-500 my-5'
 
 export default function Home() {
   return (
     <div>
       <Hero />
-      <Button>Нажми на меня</Button>
+
+      <div id="about-us" className={styles}>
+        about-us
+      </div>
+      <div id="prices" className={styles}>
+        prices
+      </div>
+      <div id="contacts" className={styles}>
+        contacts
+      </div>
     </div>
   )
 }
