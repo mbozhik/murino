@@ -2,6 +2,8 @@
 
 import {useState, useEffect} from 'react'
 
+import HeaderLink from './HeaderSwitchLink'
+
 const links = [
   {title: 'О нас', link: '#about-us'},
   {title: 'Цены', link: '#prices'},
@@ -56,20 +58,18 @@ export default function HeaderSwitch() {
   }, [showDynamicLink])
 
   return (
-    <div className="fixed right-20 text-[22px] bg-white text-custom-gray rounded-[35px] p-[3px] font-book">
-      <ul className="flex gap-1">
-        {links.slice(0, 3).map((link, index) => (
-          <li key={index} className={`px-8 py-3 rounded-[35px] ${link.link === activeLink ? 'text-white bg-custom-green duration-200' : ''}`}>
-            <a href={link.link}>{link.title}</a>
-          </li>
+    <div className="fixed right-20 text-[22px] bg-white text-custom-gray rounded-[35px] p-[3px] font-book flex gap-1">
+      {links.slice(0, 3).map((link, index) => (
+        <HeaderLink key={index} link={link.link} active={link.link === activeLink}>
+          {link.title}
+        </HeaderLink>
+      ))}
+      {showDynamicLink &&
+        links.slice(-1).map((link, index) => (
+          <HeaderLink key={index} link={link.link} active={link.link === activeLink} classes="bg-custom-e4">
+            {link.title}
+          </HeaderLink>
         ))}
-        {showDynamicLink &&
-          links.slice(-1).map((link, index) => (
-            <li key={index} className={`px-8 py-3 rounded-[35px] bg-custom-e4 ${link.link === activeLink ? 'text-white !bg-custom-green duration-200' : ''}`}>
-              <a href={link.link}>{link.title}</a>
-            </li>
-          ))}
-      </ul>
     </div>
   )
 }
