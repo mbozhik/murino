@@ -4,7 +4,7 @@ import type {Config} from 'tailwindcss'
 const config = {
   mode: 'jit',
   darkMode: ['class'],
-  content: ['./pages/**/*.{ts,tsx}', './components/**/*.{ts,tsx}', './app/**/*.{ts,tsx}', './src/**/*.{ts,tsx}'],
+  content: ['./pages/**/*.{ts,tsx}', './components/**/*.{ts,tsx}', './components/**/**/*.{ts,tsx}', './app/**/*.{ts,tsx}', './src/**/*.{ts,tsx}', './src/components/index/Hero.tsx'],
   prefix: '',
   theme: {
     container: {
@@ -50,12 +50,12 @@ const config = {
         'accordion-up': 'accordion-up 0.2s ease-out',
       },
     },
-    // screens: {
-    //   xl: {max: '1536px'},
-    //   lg: {max: '1024px'},
-    //   sm: {max: '768px'},
-    //   xs: {max: '350px'},
-    // },
+    screens: {
+      xl: {max: '1536px'},
+      lg: {max: '1024px'},
+      sm: {max: '768px'},
+      xs: {max: '350px'},
+    },
   },
   plugins: [
     require('tailwindcss-animate'),

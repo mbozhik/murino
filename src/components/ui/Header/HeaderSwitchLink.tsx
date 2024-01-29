@@ -7,7 +7,7 @@ interface HeaderLinkProps {
 
 export default function HeaderLink({link, active, classes, children}: HeaderLinkProps) {
   return (
-    <a href={link} className={`px-8 py-3 rounded-large ${active ? 'text-white !bg-custom-green duration-200' : ''} ${classes}`}>
+    <a href={link} className={`text-[22px] xl:text-lg px-8 py-3 xl:px-6 xl:py-2 rounded-large ${active ? 'text-white !bg-custom-green duration-200' : ''} ${classes}`}>
       {children}
     </a>
   )

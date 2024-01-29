@@ -7,17 +7,17 @@ import HeroBackground from '../../assets/index/hero-background.png'
 import HeroText from '../../assets/index/hero-text.svg'
 import HeroSocials from './HeroSocials'
 
-const screenHeight = '!sm:h-[100svh] h-[100vh]'
+const screenHeight = 'sm:h-[100svh] h-[100vh]'
 
 export default function Hero() {
   return (
-    <section id="hero" className={`relative pt-12 duration-500 ${screenHeight}`}>
+    <section id="hero" className={`relative pt-10 xs:pb-10 sm:pt-5 duration-500 ${screenHeight}`}>
       <Header />
-      <div className="grid h-[75vh] place-items-center">
-        <Image className="object-cover" src={HeroText} alt="" />
+      <div className="grid h-[75vh] xl:h-[74vh] sm:h-[70vh] xs:h-[62.5vh] place-items-center">
+        <Image className="xl:w-[30%] sm:w-[70%] object-cover" src={HeroText} alt="" />
       </div>
-      <div className="flex items-center justify-between mx-20">
-        <Button style="hero" link="#booking">
+      <div className="flex items-center justify-between mx-20 sm:flex-col sm:gap-5 sm:mx-5">
+        <Button style="hero" link="#booking" classes="sm:text-lg sm:w-full">
           Забронировать
         </Button>
         <HeroSocials />

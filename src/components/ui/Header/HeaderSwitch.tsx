@@ -12,7 +12,7 @@ const links = [
 ]
 
 let scrollBuffer = 50
-let headerOffset = 'pt-7'
+const isMobile = window.innerWidth <= 768
 
 export default function HeaderSwitch() {
   const [activeLink, setActiveLink] = useState(links[0].link)
@@ -22,31 +22,24 @@ export default function HeaderSwitch() {
     const handleScroll = () => {
       const scrollPosition = window.scrollY
 
-      links.forEach((link) => {
-        const section = document.querySelector(link.link) as HTMLElement
-        if (section) {
-          const sectionTop = section.offsetTop
-          const sectionHeight = section.offsetHeight
+      !isMobile &&
+        links.forEach((link) => {
+          const section = document.querySelector(link.link) as HTMLElement
+          if (section) {
+            const sectionTop = section.offsetTop
+            const sectionHeight = section.offsetHeight
 
-          if (scrollPosition >= sectionTop - scrollBuffer && scrollPosition < sectionTop + sectionHeight) {
-            setActiveLink(link.link)
+            if (scrollPosition >= sectionTop - scrollBuffer && scrollPosition < sectionTop + sectionHeight) {
+              setActiveLink(link.link)
+            }
           }
-        }
-      })
+        })
 
       const heroSection = document.querySelector('#hero') as HTMLElement
       if (heroSection) {
         const heroSectionTop = heroSection.offsetTop
 
-        setTimeout(() => {
-          setShowDynamicLink(scrollPosition >= heroSectionTop + heroSection.offsetHeight)
-        }, 500)
-
-        if (scrollPosition >= heroSection.offsetHeight) {
-          heroSection.classList.add(headerOffset)
-        } else {
-          heroSection.classList.remove(headerOffset)
-        }
+        setShowDynamicLink(scrollPosition >= heroSectionTop + heroSection.offsetHeight)
       }
     }
 
@@ -58,15 +51,16 @@ export default function HeaderSwitch() {
   }, [showDynamicLink])
 
   return (
-    <div className="fixed right-20 text-[22px] bg-white text-custom-gray rounded-large p-[3px] font-book flex gap-1">
-      {links.slice(0, 3).map((link, index) => (
-        <HeaderLink key={index} link={link.link} active={link.link === activeLink}>
-          {link.title}
-        </HeaderLink>
-      ))}
+    <div className={`fixed sm:bottom-5 justify-center sm:w-[90%] sm:right-5 right-20 text-custom-gray rounded-large p-[3px] font-book flex gap-1 sm:gap-0 bg-white ${showDynamicLink && isMobile ? 'bg-white' : 'sm:bg-transparent'}`}>
+      {!isMobile &&
+        links.slice(0, 3).map((link, index) => (
+          <HeaderLink key={index} link={link.link} active={link.link === activeLink}>
+            {link.title}
+          </HeaderLink>
+        ))}
       {showDynamicLink &&
         links.slice(-1).map((link, index) => (
-          <HeaderLink key={index} link={link.link} active={link.link === activeLink} classes="bg-custom-e4">
+          <HeaderLink key={index} link={link.link} active={link.link === activeLink} classes="bg-custom-e4 sm:bg-transparent sm:uppercase">
             {link.title}
           </HeaderLink>
         ))}
