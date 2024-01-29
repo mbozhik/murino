@@ -15,6 +15,10 @@ export default function Home() {
       <div id="contacts" className={styles}>
         contacts
       </div>
+
+      <div id="booking" className={styles}>
+        contacts
+      </div>
     </div>
   )
 }
