@@ -30,6 +30,11 @@ const config = {
           e4: '#E4E4E4',
         },
       },
+      borderRadius: {
+        large: '35px',
+        medium: '30px',
+        small: '20px',
+      },
       keyframes: {
         'accordion-down': {
           from: {height: '0'},

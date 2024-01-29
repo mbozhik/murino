@@ -58,7 +58,7 @@ export default function HeaderSwitch() {
   }, [showDynamicLink])
 
   return (
-    <div className="fixed right-20 text-[22px] bg-white text-custom-gray rounded-[35px] p-[3px] font-book flex gap-1">
+    <div className="fixed right-20 text-[22px] bg-white text-custom-gray rounded-large p-[3px] font-book flex gap-1">
       {links.slice(0, 3).map((link, index) => (
         <HeaderLink key={index} link={link.link} active={link.link === activeLink}>
           {link.title}
