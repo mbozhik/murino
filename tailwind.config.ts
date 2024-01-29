@@ -19,10 +19,13 @@ const config = {
         sans: ['var(--font-opensans)', 'ui-sans-serif', 'system-ui', '-apple-system', 'Roboto', 'sans-serif'],
         bebas: ['var(--font-bebas)', 'ui-sans-serif', 'system-ui', '-apple-system', 'Roboto', 'sans-serif'],
       },
+      fontWeight: {
+        book: '450',
+      },
       colors: {
         custom: {
           green: '#387A22',
-          45: '#454545',
+          gray: '#454545',
           95: '#959595',
           e4: '#E4E4E4',
         },
