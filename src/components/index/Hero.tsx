@@ -7,7 +7,7 @@ import HeroBackground from '../../assets/index/hero-background.png'
 import HeroText from '../../assets/index/hero-text.svg'
 import HeroSocials from './HeroSocials'
 
-const screenHeight = 'sm:h-[100svh] h-[100vh]'
+const screenHeight = 'h-[100vh]'
 
 export default function Hero() {
   return (

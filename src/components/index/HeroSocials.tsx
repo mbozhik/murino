@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 
 import TelImage from '../../assets/index/socials/tel.svg'
 import VkImage from '../../assets/index/socials/vk.svg'
@@ -14,9 +15,9 @@ export default function HeroSocials() {
   return (
     <div className="flex gap-4">
       {icons.map((icon, index) => (
-        <a href={icon.link} target={icon.target} title="icon" key={index} className="duration-200 s-14 xl:s-10 hover:scale-110">
+        <Link href={icon.link} target={icon.target} title="icon" key={index} className="duration-200 s-14 xl:s-10 hover:scale-110">
           <Image className="object-cover s-full" src={icon.image} alt={`${icon.link} icon`} width={48} height={48} />
-        </a>
+        </Link>
       ))}
     </div>
   )

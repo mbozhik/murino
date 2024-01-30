@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 interface ButtonProps {
   style?: 'hero' | 'heading' | 'simple'
   link?: string
@@ -13,8 +15,8 @@ export default function Button({link, classes, children, style = 'simple'}: Butt
   }
 
   return (
-    <a href={link} className={`text-center px-16 py-6 xl:px-10 xl:py-4 sm:py-2 text-3xl xl:text-xl sm:text-lg uppercase font-medium tracking-tighter duration-200 ${buttonStyles[style]} ${classes}`}>
+    <Link href={link} className={`text-center px-16 py-6 xl:px-10 xl:py-4 sm:py-2 text-3xl xl:text-xl sm:text-lg uppercase font-medium tracking-tighter duration-200 ${buttonStyles[style]} ${classes}`}>
       {children}
-    </a>
+    </Link>
   )
 }
