@@ -17,11 +17,11 @@ export default function HeaderSwitch() {
   const [activeLink, setActiveLink] = useState(links[0].link)
   const [showDynamicLink, setShowDynamicLink] = useState(false)
 
+  const isMobile = window.innerWidth <= 768
+
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY
-
-      const isMobile = window.innerWidth <= 768
 
       !isMobile &&
         links.forEach((link) => {
