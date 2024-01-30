@@ -12,7 +12,6 @@ const links = [
 ]
 
 let scrollBuffer = 50
-const isMobile = window.innerWidth <= 768
 
 export default function HeaderSwitch() {
   const [activeLink, setActiveLink] = useState(links[0].link)
@@ -21,6 +20,8 @@ export default function HeaderSwitch() {
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY
+
+      const isMobile = window.innerWidth <= 768
 
       !isMobile &&
         links.forEach((link) => {
