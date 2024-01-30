@@ -14,13 +14,17 @@ const links = [
 let scrollBuffer = 50
 
 export default function HeaderSwitch() {
-  const isMobile = /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent)
+  const isMobile = typeof window !== 'undefined' && /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent)
 
   const [activeLink, setActiveLink] = useState(links[0].link)
   const [showDynamicLink, setShowDynamicLink] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
+      if (typeof window === 'undefined') {
+        return
+      }
+
       const scrollPosition = window.scrollY
 
       !isMobile &&
@@ -49,7 +53,7 @@ export default function HeaderSwitch() {
     return () => {
       window.removeEventListener('scroll', handleScroll)
     }
-  }, [showDynamicLink])
+  }, [showDynamicLink, isMobile])
 
   return (
     <div className={`fixed sm:bottom-5 justify-center sm:w-[90%] sm:right-5 right-20 text-custom-gray rounded-large p-[3px] font-book flex gap-1 sm:gap-0 bg-white ${showDynamicLink && isMobile ? 'bg-white' : 'sm:bg-transparent'}`}>
