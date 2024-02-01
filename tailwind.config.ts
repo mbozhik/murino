@@ -17,7 +17,7 @@ const config = {
     extend: {
       fontFamily: {
         sans: ['var(--font-opensans)', 'ui-sans-serif', 'system-ui', '-apple-system', 'Roboto', 'sans-serif'],
-        bebas: ['var(--font-bebas)', 'ui-sans-serif', 'system-ui', '-apple-system', 'Roboto', 'sans-serif'],
+        bebas: ['BebasNeue', 'ui-sans-serif', 'system-ui', '-apple-system', 'Roboto', 'sans-serif'],
       },
       fontWeight: {
         book: '450',

@@ -23,11 +23,6 @@ const SuisseIntl = localFont({
   ],
 })
 
-export const BebasNeue = localFont({
-  src: './fonts/BebasNeueCyrillic.woff2',
-  variable: '--font-bebas',
-})
-
 export const metadata: Metadata = {
   title: {
     default: 'МУРИНО АРЕНА',

@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'BebasNeue';
+  src: url('../app/fonts/BebasNeueCyrillic.woff2') format('woff2');
+  font-style: normal;
+}
+
 .TITLE_SPAN {
-  @apply text-custom-95 underline underline-offset-8 decoration-4;
+  @apply underline text-custom-95 underline-offset-8 decoration-4;
 }
