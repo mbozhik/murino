@@ -23,7 +23,7 @@ const SuisseIntl = localFont({
   ],
 })
 
-const BebasNeue = localFont({
+export const BebasNeue = localFont({
   src: './fonts/BebasNeueCyrillic.woff2',
   variable: '--font-bebas',
 })
@@ -48,10 +48,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ru" className="scroll-smooth">
-      <body className={`${SuisseIntl.className} tracking-tighter`}>
-        {/* <h1 className={`${BebasNeue.className}`}>арена</h1> */}
-        {children}
-      </body>
+      <body className={`${SuisseIntl.className} tracking-tighter`}>{children}</body>
     </html>
   )
 }

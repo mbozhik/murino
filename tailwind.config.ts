@@ -35,6 +35,10 @@ const config = {
         medium: '30px',
         small: '20px',
       },
+      boxShadow: {
+        base: '0px 0px 10px rgba(0, 0, 0, 0.25)',
+        card: '0px 4px 20px rgba(0, 0, 0, 0.25)',
+      },
       keyframes: {
         'accordion-down': {
           from: {height: '0'},

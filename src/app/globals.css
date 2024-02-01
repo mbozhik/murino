@@ -1,3 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.TITLE_SPAN {
+  @apply text-custom-95 underline underline-offset-8 decoration-4;
+}
