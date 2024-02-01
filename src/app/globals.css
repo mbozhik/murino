@@ -11,3 +11,11 @@
 .title-span {
   @apply underline text-custom-95 underline-offset-8 decoration-4;
 }
+
+.swiper-scrollbar {
+  @apply !bg-white/30;
+}
+
+.swiper-scrollbar-drag {
+  @apply !bg-white;
+}

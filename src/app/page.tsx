@@ -1,5 +1,7 @@
 import Hero from '#/Hero'
 import About from '@/components/index/About'
+import Gallery from '@/components/index/Gallery'
+
 const styles = 'h-screen bg-purple-500 mt-52'
 
 export default function Home() {
@@ -7,6 +9,7 @@ export default function Home() {
     <div>
       <Hero />
       <About />
+      <Gallery />
 
       <div id="prices" className={styles}>
         prices
