@@ -56,7 +56,7 @@ export default function HeaderSwitch() {
   }, [showDynamicLink, isMobile])
 
   return (
-    <div className={`fixed sm:bottom-5 justify-center sm:w-[90%] sm:right-5 right-20 text-custom-gray rounded-large p-[3px] font-book flex gap-1 sm:gap-0 bg-white ${showDynamicLink && isMobile ? 'bg-white' : 'sm:bg-transparent'}`}>
+    <div className={`fixed z-50 sm:bottom-5 justify-center sm:w-[90%] sm:right-5 right-20 text-custom-gray rounded-large p-[3px] font-book flex gap-1 sm:gap-0 bg-white shadow-base ${showDynamicLink && isMobile ? 'bg-white' : 'sm:bg-transparent'}`}>
       {!isMobile &&
         links.slice(0, 3).map((link, index) => (
           <HeaderLink key={index} link={link.link} active={link.link === activeLink}>
@@ -65,7 +65,7 @@ export default function HeaderSwitch() {
         ))}
       {showDynamicLink &&
         links.slice(-1).map((link, index) => (
-          <HeaderLink key={index} link={link.link} active={link.link === activeLink} classes="bg-custom-e4 sm:bg-transparent sm:uppercase">
+          <HeaderLink key={index} link={link.link} active={link.link === activeLink} classes="bg-custom-e4 sm:bg-transparent sm:uppercase hover:bg-custom-green hover:text-white duration-200">
             {link.title}
           </HeaderLink>
         ))}
