@@ -56,15 +56,15 @@ const Card: React.FC<CardProps> = ({title, image, hoverImage, text, points}) => 
   const [isHovered, setIsHovered] = useState(false)
 
   return (
-    <div className="relative w-full h-[58vh] px-12 pt-10 pb-8 rounded-small shadow-card overflow-hidden" onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
-      <div className={`${isLastCard ? 'flex flex-col gap-2 h-full' : 'flex flex-col justify-between h-full'}`}>
-        <h1 className={`text-[84px] leading-none tracking-tight text-custom-gray font-bebas`} dangerouslySetInnerHTML={{__html: title}} />
+    <div className="relative w-full h-[58vh] xl:h-[50vh] sm:h-auto px-12 pt-10 pb-8 sm:px-7 sm:py-10 rounded-small shadow-card overflow-hidden" onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
+      <div className={`${isLastCard ? 'flex flex-col gap-2 h-full' : 'flex flex-col justify-between h-full sm:justify-start sm:gap-5'}`}>
+        <h1 className={`text-[84px] xl:text-6xl sm:text-5xl leading-none tracking-tight text-custom-gray font-bebas`} dangerouslySetInnerHTML={{__html: title}} />
 
-        <div className={`text-2xl text-custom-95 ${isLastCard ? 'flex flex-col justify-between h-full' : ''}`}>
-          <p className="w-[60%]" dangerouslySetInnerHTML={{__html: text}} />
+        <div className={`text-2xl xl:text-xl text-custom-95 ${isLastCard ? 'flex flex-col justify-between h-full' : ''}`}>
+          <p className="w-[60%] sm:w-full" dangerouslySetInnerHTML={{__html: text}} />
 
           {points && points.length > 0 && (
-            <ul className="pl-6 mt-10 list-decimal">
+            <ul className="pl-6 mt-10 list-decimal sm:mt-5 sm:px-6 sm:py-2 sm:list-disc sm:text-sm sm:border-2 sm:border-custom-e4 sm:rounded-md">
               {Object.values(points).map((point, index) => (
                 <li key={index} dangerouslySetInnerHTML={{__html: point}} />
               ))}
@@ -73,8 +73,8 @@ const Card: React.FC<CardProps> = ({title, image, hoverImage, text, points}) => 
         </div>
       </div>
 
-      <Image className={`absolute inset-0 -z-10 h-full w-full transition-opacity duration-500 ${isHovered ? 'opacity-0' : 'opacity-100'}`} src={image} alt={title} width={isLastCard ? '2000' : '1000'} height={1000} />
-      <Image className={`absolute inset-0 -z-10 h-full w-full transition-opacity duration-500 ${isHovered ? 'opacity-100' : 'opacity-0'}`} src={hoverImage} alt={title} width={isLastCard ? '2000' : '1000'} height={1000} />
+      <Image className={`sm:hidden absolute inset-0 object-cover -z-10 h-full w-full transition-opacity duration-500 ${isHovered ? 'opacity-0' : 'opacity-100'}`} src={image} alt={title} width={isLastCard ? '2000' : '1000'} height={1000} />
+      <Image className={`sm:hidden absolute inset-0 object-cover -z-10 h-full w-full transition-opacity duration-500 ${isHovered ? 'opacity-100' : 'opacity-0'}`} src={hoverImage} alt={title} width={isLastCard ? '2000' : '1000'} height={1000} />
     </div>
   )
 }
@@ -82,11 +82,11 @@ const Card: React.FC<CardProps> = ({title, image, hoverImage, text, points}) => 
 export default function About() {
   return (
     <section id="about-us" className="pt-10 mt-10">
-      <Button style="heading" classes="w-1/2 mx-auto">
+      <Button style="heading" classes="w-1/2 mx-auto sm:w-[96%]">
         Почему нас выбирают?
       </Button>
-      <div className="flex flex-col mx-3 mt-10 gap-14">
-        <div className="grid justify-between grid-cols-2 gap-10">
+      <div className="flex flex-col mx-3 mt-10 sm:mt-5 gap-14 sm:gap-5">
+        <div className="grid justify-between grid-cols-2 gap-10 sm:gap-5 sm:grid-cols-1">
           {Object.values(cardsData)
             .slice(0, 2)
             .map((card, index) => (
