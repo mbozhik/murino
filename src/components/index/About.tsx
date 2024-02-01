@@ -5,12 +5,12 @@ import Image from 'next/image'
 
 import Button from '../ui/Button'
 
-import ImageCardFirst from '@/assets/index/about/1.jpg'
-import ImageCardFirstHover from '@/assets/index/about/1_2.jpg'
-import ImageCardSecond from '@/assets/index/about/2.jpg'
-import ImageCardSecondHover from '@/assets/index/about/2_2.jpg'
-import ImageCardThird from '@/assets/index/about/3.jpg'
-import ImageCardThirdHover from '@/assets/index/about/3_2.jpg'
+import ImageCardFirst from '@/assets/index/about/1.webp'
+import ImageCardFirstHover from '@/assets/index/about/1_2.webp'
+import ImageCardSecond from '@/assets/index/about/2.webp'
+import ImageCardSecondHover from '@/assets/index/about/2_2.webp'
+import ImageCardThird from '@/assets/index/about/3.webp'
+import ImageCardThirdHover from '@/assets/index/about/3_2.webp'
 
 type StaticImageData = {
   src: string
