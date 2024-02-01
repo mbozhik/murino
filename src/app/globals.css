@@ -9,13 +9,25 @@
 }
 
 .title-span {
-  @apply underline text-custom-95 underline-offset-8 decoration-4;
+  @apply underline text-custom-95 underline-offset-8 decoration-4 sm:underline-offset-2;
 }
 
 .swiper-scrollbar {
-  @apply !bg-white/30;
+  @apply !bg-white/30 sm:hidden;
 }
 
 .swiper-scrollbar-drag {
   @apply !bg-white;
+}
+
+.swiper-pagination {
+  @apply hidden sm:block;
+}
+
+.swiper-pagination-bullet {
+  @apply !bg-white !opacity-50;
+}
+
+.swiper-pagination-bullet-active {
+  @apply !opacity-100;
 }
