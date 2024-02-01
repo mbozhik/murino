@@ -25,12 +25,16 @@ const SlideButton: React.FC<SlideButtonProps> = ({position}) => {
   const swiper = useSwiper()
 
   const handleClick = () => {
-    position === 'left' ? swiper.slidePrev() : swiper.slideNext()
+    swiper[position === 'left' ? 'slidePrev' : 'slideNext']()
   }
 
+  const isLeft = position === 'left'
+
   return (
-    <button className={`absolute top-[47%] z-10 p-2 text-white bg-black s-fit ${position == 'left' ? 'left-2' : 'right-2'}`} onClick={handleClick}>
-      Slide
+    <button className={`group absolute top-[47%] z-10 bg-white rounded-small py-4 ${isLeft ? 'left-5 pl-5 pr-6' : 'right-5 pr-5 pl-6'}`} onClick={handleClick} title="slide">
+      <svg className={`${isLeft ? '' : 'rotate-180'}`} xmlns="http://www.w3.org/2000/svg" width="46" height="28" viewBox="0 0 46 28" fill="none">
+        <path className="duration-200 group-hover:fill-custom-green fill-custom-gray" d="M24.529 25.696c0 1.547-1.68 2.508-3.013 1.725L1.935 15.916c-1.316-.774-1.316-2.676 0-3.45L21.515.963c1.334-.784 3.014.178 3.014 1.724v6.86h21.316v10.358H24.53v5.792Z" />
+      </svg>
     </button>
   )
 }
@@ -53,6 +57,7 @@ export default function Gallery() {
       >
         <SlideButton position="left" />
         <SlideButton position="right" />
+
         {sliderImages.map((image, key) => (
           <SwiperSlide className="relative grid place-items-center" key={key}>
             <Image className="absolute inset-0 block object-cover s-full" src={image} width={2000} height={2000} alt="" />
