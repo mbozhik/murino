@@ -8,6 +8,6 @@
   font-style: normal;
 }
 
-.TITLE_SPAN {
+.title-span {
   @apply underline text-custom-95 underline-offset-8 decoration-4;
 }

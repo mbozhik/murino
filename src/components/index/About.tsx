@@ -29,21 +29,21 @@ interface CardProps {
 
 const cardsData = {
   1: {
-    title: '<span class="TITLE_SPAN">4 новых</span> поля для футбола и&nbsp;мини-футбола',
+    title: '<span class="title-span">4 новых</span> поля для футбола и&nbsp;мини-футбола',
     image: ImageCardFirst,
     hoverImage: ImageCardFirstHover,
     text: 'Отдыхайте и&nbsp;готовьтесь к&nbsp;игре в&nbsp;уютных раздевалках с&nbsp;отдельными душевыми и&nbsp;теплыми полами.',
     points: [],
   },
   2: {
-    title: 'Искусственная <br> трава <span class="TITLE_SPAN">60&nbsp;мм</span>',
+    title: 'Искусственная <br> трава <span class="title-span">60&nbsp;мм</span>',
     image: ImageCardSecond,
     hoverImage: ImageCardSecondHover,
     text: 'Опыт настоящего футбольного поля с&nbsp;инновационной искусственной травой высотой 60&nbsp;мм.',
     points: [],
   },
   3: {
-    title: '<span class="TITLE_SPAN">Комфортные</span> условия для посетителей',
+    title: '<span class="title-span">Комфортные</span> условия для посетителей',
     image: ImageCardThird,
     hoverImage: ImageCardThirdHover,
     text: 'Отдыхайте и&nbsp;готовьтесь к&nbsp;игре, мы&nbsp;позаботимся об&nbsp;условиях и&nbsp;вашем комфорте.',
