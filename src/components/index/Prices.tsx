@@ -81,24 +81,24 @@ const Prices = () => {
         Сколько стоит аренда?
       </Button>
 
-      <div className="flex flex-col gap-10 mx-auto mt-5 p-7 w-fit shadow-card rounded-small">
-        <div className="flex justify-between gap-4">
+      <div className="flex flex-col gap-10 sm:gap-7 mx-auto mt-5 sm:mt-7 p-7 sm:p-3 sm:w-[92%] w-fit shadow-card rounded-small">
+        <div className="flex justify-between gap-4 sm:flex-col sm:gap-2">
           {fieldButtons.map((button) => (
-            <button key={button.fieldSize} className={`!px-12 rounded-small border-[3px] border-transparent ${buttonStyles.default} ${selectedField === button.fieldSize ? 'bg-custom-gray text-white' : 'text-custom-gray !border-custom-gray'}`} title="switch" onClick={() => handleFieldSwitch(button.fieldSize)}>
+            <button key={button.fieldSize} className={`!px-12 xl:!px-7 sm:py-3 rounded-micro border-[3px] border-transparent ${buttonStyles.default} ${selectedField === button.fieldSize ? 'bg-custom-gray text-white' : 'text-custom-gray !border-custom-gray'}`} title="switch" onClick={() => handleFieldSwitch(button.fieldSize)}>
               футбольное поле <span className="text-custom-95">{button.label}</span>
             </button>
           ))}
         </div>
 
         {Object.values(priceData[selectedField]).map((category: PriceCategory, index: number) => (
-          <div key={index} className="flex flex-col gap-7">
-            <h1 className="text-3xl font-medium text-center uppercase text-custom-gray">{category.title}</h1>
+          <div key={index} className="flex flex-col gap-7 xl:gap-5 sm:gap-3">
+            <h1 className="text-3xl font-medium text-center uppercase xl:text-2xl sm:text-xl text-custom-gray">{category.title}</h1>
 
-            <div className="flex flex-col gap-5">
+            <div className="flex flex-col gap-5 xl:gap-3">
               {category.schedule.map((item: ScheduleItem, itemIndex: number) => (
-                <div key={itemIndex} className="flex items-center text-[38px] justify-between text-custom-gray">
+                <div key={itemIndex} className="flex items-center text-[38px] xl:text-3xl sm:text-xl justify-between text-custom-gray">
                   <button
-                    className={`w-1/2 py-1 duration-200 bg-custom-e4 rounded-micro hover:bg-custom-gray hover:text-white ${selectedTime === item.time ? 'bg-custom-gray text-white' : ''}`}
+                    className={`w-1/2 py-1 xl:py-2 sm:px-2 duration-200 bg-custom-e4 rounded-micro hover:bg-custom-gray hover:text-white ${selectedTime === item.time ? 'bg-custom-gray text-white' : ''}`}
                     onClick={() => {
                       handleTimeSelection(item.time, item.price)
                       console.log(`Выбранный временной слот: ${item.time}, Стоимость: ${item.price}`)
