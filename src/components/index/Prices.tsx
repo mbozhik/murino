@@ -101,7 +101,7 @@ const Prices = () => {
                     className={`w-1/2 py-1 xl:py-2 sm:px-2 duration-200 bg-custom-e4 rounded-micro hover:bg-custom-gray hover:text-white ${selectedTime === item.time ? 'bg-custom-gray text-white' : ''}`}
                     onClick={() => {
                       handleTimeSelection(item.time, item.price)
-                      console.log(`Выбранный временной слот: ${item.time}, Стоимость: ${item.price}`)
+                      console.log(`Выбранный временной слот: ${item.time}, Стоимость: ${item.price} | Футбольное поле: ${selectedField}`)
                     }}
                   >
                     {item.time}
@@ -117,7 +117,7 @@ const Prices = () => {
           className={`!text-white  !bg-custom-green duration-200 hover:!bg-transparent hover:!ring-[3px] hover:!ring-custom-green hover:!text-custom-green ${buttonStyles.hero} ${buttonStyles.default}`}
           onClick={() => {
             if (selectedTime && selectedPrice) {
-              alert(`Выбранный временной слот: ${selectedTime}, Стоимость: ${selectedPrice}`)
+              alert(`Выбранный временной слот: ${selectedTime}, Стоимость: ${selectedPrice} | Футбольное поле: ${selectedField}`)
             } else {
               alert('Пожалуйста, выберите временной слот.')
             }
