@@ -1,14 +1,29 @@
 'use client'
 
+import Link from 'next/link'
+
 import {useState, useEffect} from 'react'
 
-import HeaderLink from './HeaderSwitchLink'
+interface HeaderLinkProps {
+  link: string
+  active?: boolean
+  children: React.ReactNode
+  classes?: string
+}
+
+function HeaderLink({link, active, classes, children}: HeaderLinkProps) {
+  return (
+    <Link href={link} className={`text-[22px] xl:text-lg px-8 py-3 xl:px-6 xl:py-2 rounded-large ${active ? 'text-white !bg-custom-green duration-200' : ''} ${classes}`}>
+      {children}
+    </Link>
+  )
+}
 
 const links = [
   {title: 'О нас', link: '#about-us'},
   {title: 'Цены', link: '#prices'},
   {title: 'Контакты', link: '#contacts'},
-  {title: 'Забронировать', link: '#booking'},
+  {title: 'Забронировать', link: '#prices'},
 ]
 
 export default function HeaderSwitch() {
@@ -64,7 +79,7 @@ export default function HeaderSwitch() {
         ))}
       {showDynamicLink &&
         links.slice(-1).map((link, index) => (
-          <HeaderLink key={index} link={link.link} active={link.link === activeLink} classes="bg-custom-e4 sm:bg-transparent sm:uppercase hover:bg-custom-green hover:text-white duration-200">
+          <HeaderLink key={index} link={link.link} classes="bg-custom-e4 sm:bg-transparent sm:uppercase hover:bg-custom-green hover:text-white duration-200">
             {link.title}
           </HeaderLink>
         ))}
