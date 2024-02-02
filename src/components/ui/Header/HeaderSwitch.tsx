@@ -11,8 +11,6 @@ const links = [
   {title: 'Забронировать', link: '#booking'},
 ]
 
-let scrollBuffer = 50
-
 export default function HeaderSwitch() {
   const isMobile = typeof window !== 'undefined' && /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent)
 
@@ -26,15 +24,16 @@ export default function HeaderSwitch() {
       }
 
       const scrollPosition = window.scrollY
+      const offsetBeforeHighlight = 200
 
       !isMobile &&
         links.forEach((link) => {
           const section = document.querySelector(link.link) as HTMLElement
           if (section) {
-            const sectionTop = section.offsetTop
+            const sectionTop = section.offsetTop - offsetBeforeHighlight
             const sectionHeight = section.offsetHeight
 
-            if (scrollPosition >= sectionTop - scrollBuffer && scrollPosition < sectionTop + sectionHeight) {
+            if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
               setActiveLink(link.link)
             }
           }
