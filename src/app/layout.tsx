@@ -24,16 +24,31 @@ const SuisseIntl = localFont({
 })
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://murino-arena.ru'),
   title: {
     default: 'МУРИНО АРЕНА',
     template: '%s — МУРИНО АРЕНА',
   },
   description: 'Мурино Арена — один из самых масштабных футбольных шатров в Санкт-Петербурге и Ленинградской области!',
+  generator: 'nextjs, react, landing page',
+  keywords: 'мурино, мурино арена, мурино футбол, мурино футбольное поле, мурино футбольный шатер',
+
   openGraph: {
+    type: 'website',
+    url: 'https://murino-arena.ru',
     title: 'МУРИНО АРЕНА',
     description: 'Мурино Арена — один из самых масштабных футбольных шатров в Санкт-Петербурге и Ленинградской области!',
+    siteName: 'МУРИНО АРЕНА',
+    images: 'https://murino-arena.ru/og.png',
   },
-  metadataBase: new URL('https://murino-arena.ru'),
+  robots: {
+    index: true,
+    follow: true,
+    noarchive: true,
+    nosnippet: true,
+    noimageindex: true,
+    nocache: true,
+  },
 }
 
 export default function RootLayout({
