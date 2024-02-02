@@ -33,9 +33,9 @@ interface ButtonProps {
 }
 
 const Button: React.FC<ButtonProps> = ({href, target, className, onClick, children}) => (
-  <a href={href} target={target} className={className} onClick={onClick}>
+  <Link href={href} target={target} className={className} onClick={onClick}>
     {children}
-  </a>
+  </Link>
 )
 
 export default function Contacts() {
@@ -80,7 +80,7 @@ export default function Contacts() {
 
         <div className="flex flex-col items-center gap-5 justify-self-center w-[75%] sm:w-full px-10 sm:px-0">
           <div className="flex flex-col border-[3px] border-custom-gray rounded-small w-full p-5 sm:px-3 sm:py-5 gap-5">
-            <h1 className="text-2xl font-medium text-center uppercase sm:text-lg sm:leading-tight text-custom-gray">
+            <h1 className="text-2xl font-medium text-center uppercase sm:text-base sm:leading-tight text-custom-gray">
               телфон <span className="text-[#c2c2c2]">(круглосуточно)</span>
             </h1>
 
@@ -101,7 +101,7 @@ export default function Contacts() {
           </div>
 
           <div className="flex flex-col border-[3px] border-custom-gray rounded-small w-full p-5 sm:px-3 sm:py-5 gap-5">
-            <h1 className="text-2xl font-medium text-center uppercase sm:text-lg text-custom-gray">адрес</h1>
+            <h1 className="text-2xl font-medium text-center uppercase sm:text-base text-custom-gray">адрес</h1>
 
             <div className="flex flex-col gap-3 sm:gap-2 text-[38px] xl:text-3xl sm:text-xl text-center uppercase">
               <Button href={linksData.copy.href} target="_blank" onClick={handleCopyClick} className={`group inline-flex justify-center items-center gap-3 sm:gap-2 ${buttonStyles.default} ${buttonStyles.light} text-2xl sm:text-sm font-medium py-4`}>

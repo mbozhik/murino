@@ -4,6 +4,7 @@ import Gallery from '@/components/index/Gallery'
 import Schema from '@/components/index/Schema'
 import Prices from '@/components/index/Prices'
 import Contacts from '@/components/index/Contacts'
+import Footer from '@/components/ui/Footer'
 
 export default function Home() {
   return (
@@ -14,8 +15,7 @@ export default function Home() {
       {/* <Schema /> */}
       <Prices />
       <Contacts />
-
-      {/* <div id="booking"></div> */}
+      <Footer />
     </div>
   )
 }
