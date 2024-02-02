@@ -97,7 +97,13 @@ const Prices = () => {
             <div className="flex flex-col gap-5">
               {category.schedule.map((item: ScheduleItem, itemIndex: number) => (
                 <div key={itemIndex} className="flex items-center text-[38px] justify-between text-custom-gray">
-                  <button className={`w-1/2 py-1 duration-200 bg-custom-e4 rounded-micro hover:bg-custom-gray hover:text-white ${selectedTime === item.time ? 'bg-custom-gray text-white' : ''}`} onClick={() => handleTimeSelection(item.time, item.price)}>
+                  <button
+                    className={`w-1/2 py-1 duration-200 bg-custom-e4 rounded-micro hover:bg-custom-gray hover:text-white ${selectedTime === item.time ? 'bg-custom-gray text-white' : ''}`}
+                    onClick={() => {
+                      handleTimeSelection(item.time, item.price)
+                      console.log(`Выбранный временной слот: ${item.time}, Стоимость: ${item.price}`)
+                    }}
+                  >
                     {item.time}
                   </button>
                   <h1 className="justify-self-end">{item.price}</h1>
@@ -107,7 +113,7 @@ const Prices = () => {
           </div>
         ))}
 
-        <button
+        {/* <button
           className={`!text-white  !bg-custom-green duration-200 hover:!bg-transparent hover:!ring-[3px] hover:!ring-custom-green hover:!text-custom-green ${buttonStyles.hero} ${buttonStyles.default}`}
           onClick={() => {
             if (selectedTime && selectedPrice) {
@@ -118,7 +124,7 @@ const Prices = () => {
           }}
         >
           Забронировать
-        </button>
+        </button> */}
       </div>
     </section>
   )
