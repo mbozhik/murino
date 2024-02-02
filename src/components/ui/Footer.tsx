@@ -8,7 +8,7 @@ export default function Footer() {
         <h1>OOO «Кронос»</h1>
       </div>
 
-      <div className="flex gap-10 p-3 sm:grid sm:grid-cols-2 sm:gap-2 sm:border-2 sm:border-custom-e4">
+      <div className="flex gap-10 p-3 sm:grid sm:grid-cols-2 sm:gap-2 sm:border-2 sm:border-custom-e4 rounded-md">
         <h1>Юр. адрес: ул. Ленина д.1</h1>
         <h1>Факт. адрес: ул. Сталина д.2</h1>
         <Link href="tel:+79217518703" className="underline duration-200 hover:text-custom-95">

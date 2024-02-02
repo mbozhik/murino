@@ -2,14 +2,17 @@
 
 import Image from 'next/image'
 
-import image1 from '@/assets/index/gallery/1.jpg'
-import image2 from '@/assets/index/gallery/2.jpg'
-import image3 from '@/assets/index/gallery/3.jpg'
-import image4 from '@/assets/index/gallery/4.jpg'
-import image5 from '@/assets/index/gallery/5.jpg'
-import image6 from '@/assets/index/gallery/6.jpg'
-import image7 from '@/assets/index/gallery/7.jpg'
-import image8 from '@/assets/index/gallery/8.jpg'
+import image1 from '@/assets/index/gallery/1.jpeg'
+import image2 from '@/assets/index/gallery/2.jpeg'
+import image3 from '@/assets/index/gallery/3.jpeg'
+import image4 from '@/assets/index/gallery/4.jpeg'
+import image5 from '@/assets/index/gallery/5.jpeg'
+import image6 from '@/assets/index/gallery/6.jpeg'
+import image7 from '@/assets/index/gallery/7.jpeg'
+import image8 from '@/assets/index/gallery/8.jpeg'
+import image9 from '@/assets/index/gallery/9.jpeg'
+import image10 from '@/assets/index/gallery/10.jpeg'
+import image11 from '@/assets/index/gallery/11.jpeg'
 
 import {Swiper, SwiperSlide, useSwiper} from 'swiper/react'
 import {Autoplay, Scrollbar, Pagination} from 'swiper/modules'
@@ -41,7 +44,7 @@ const SlideButton: React.FC<SlideButtonProps> = ({position}) => {
 }
 
 export default function Gallery() {
-  const sliderImages = [image1, image2, image3, image4, image5, image6, image7, image8]
+  const sliderImages = [image1, image2, image3, image4, image5, image6, image7, image8, image9, image10, image11]
 
   return (
     <section className="mt-20 sm:mt-10">
