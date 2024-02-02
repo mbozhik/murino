@@ -72,7 +72,7 @@ export default function Contacts() {
   const isMobile = typeof window !== 'undefined' && /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent)
 
   return (
-    <section id="contacts" className="my-28 xl:my-20">
+    <section id="contacts" className="my-28 xl:my-20 sm:my-14">
       <div className="flex items-center justify-between mx-3 sm:flex-col rounded-small shadow-card p-7 sm:p-3 gap-7">
         <div className="relative w-full overflow-hidden rounded-small shadow-card">
           <iframe className="w-full h-[70vh] sm:h-[30vh]" src={`https://yandex.ru/map-widget/v1/?ll=30.476999%2C60.043193&mode=search&oid=76918350984&ol=biz&source=serp_navig&z=${!isMobile ? '17.5' : '16'}`} frameBorder="1" title="map"></iframe>

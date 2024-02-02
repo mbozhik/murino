@@ -81,7 +81,7 @@ const Card: React.FC<CardProps> = ({title, image, hoverImage, text, points}) => 
 
 export default function About() {
   return (
-    <section id="about-us" className="pt-10 mt-10">
+    <section id="about-us" className="pt-10 mt-10 sm:pt-0 sm:sm:mt-14">
       <Button style="heading" classes="w-1/2 mx-auto sm:w-[96%]">
         Почему нас выбирают?
       </Button>
