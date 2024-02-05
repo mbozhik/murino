@@ -42,8 +42,8 @@ export const metadata: Metadata = {
     images: 'https://murino-arena.ru/og.png',
   },
   robots: {
-    index: true,
-    follow: true,
+    index: false,
+    follow: false,
     noarchive: true,
     nosnippet: true,
     noimageindex: true,
