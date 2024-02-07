@@ -96,9 +96,9 @@ const Prices = () => {
 
             <div className="flex flex-col gap-5 xl:gap-3">
               {category.schedule.map((item: ScheduleItem, itemIndex: number) => (
-                <div key={itemIndex} className="flex items-center text-[38px] xl:text-3xl sm:text-xl justify-between text-custom-gray">
+                <div key={itemIndex} className="flex items-center text-[38px] xl:text-3xl justify-between text-custom-gray">
                   <button
-                    className={`w-1/2 py-1 xl:py-2 sm:px-2 duration-200 bg-custom-e4 rounded-micro hover:bg-custom-gray hover:text-white ${selectedTime === item.time ? 'bg-custom-gray text-white' : ''}`}
+                    className={`sm:text-base w-1/2 py-1 xl:py-2 sm:px-2 duration-200 bg-custom-e4 rounded-micro hover:bg-custom-gray hover:text-white ${selectedTime === item.time ? 'bg-custom-gray text-white' : ''}`}
                     onClick={() => {
                       handleTimeSelection(item.time, item.price)
                       console.log(`Выбранный временной слот: ${item.time}, Стоимость: ${item.price} | Футбольное поле: ${selectedField}`)
@@ -106,7 +106,10 @@ const Prices = () => {
                   >
                     {item.time}
                   </button>
-                  <h1 className="justify-self-end">{item.price}</h1>
+                  <h1 className="sm:text-lg">
+                    {item.price}
+                    <span className="text-custom-95">/ЧАС</span>
+                  </h1>
                 </div>
               ))}
             </div>
