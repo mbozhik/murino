@@ -10,13 +10,7 @@ import TgImage from '../../assets/index/socials/tg.svg'
 import CopyImage from '../../assets/index/contacts/copy.svg'
 import MapImage from '../../assets/index/contacts/map.svg'
 
-const linksData = {
-  tel: {href: 'tel:+79217518703', text: '+7 (921) 751-87-03'},
-  vk: {href: 'https://vk.com/murino_arena', text: 'MURINO_ARENA'},
-  tg: {href: 'https://t.me/murino_arena', text: 'MURINO_ARENA'},
-  copy: {href: '', text: 'г. Мурино, ул. Ленина д.1'},
-  map: {href: 'https://yandex.ru/maps/-/CDBYJM37', text: 'Как добраться на метро'},
-}
+import {linksData} from '@/lib/data'
 
 const buttonStyles = {
   default: 'py-1 xl:py-2 sm:px-2 duration-150 rounded-micro hover:text-custom-gray hover:ring-[3px] hover:ring-custom-gray',
