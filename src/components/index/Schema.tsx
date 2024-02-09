@@ -1,3 +1,11 @@
+import Button from '../ui/Button'
+
 export default function Schema() {
-  return <div className="font-bebas text-4xl text-center">Schema</div>
+  return (
+    <section id="schema" className="pt-10 mt-10 sm:pt-0 sm:sm:mt-14">
+      <Button style="heading" classes="mx-3">
+        Сколько стоит аренда?
+      </Button>
+    </section>
+  )
 }
