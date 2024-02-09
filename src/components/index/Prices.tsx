@@ -1,6 +1,7 @@
 'use client'
 
 import {useState} from 'react'
+
 import Button from '../ui/Button'
 import {buttonStyles} from '../ui/Button'
 
@@ -81,7 +82,7 @@ const Prices = () => {
         Сколько стоит аренда?
       </Button>
 
-      <div className="flex flex-col gap-10 sm:gap-7 mx-auto mt-5 sm:mt-5 p-7 sm:p-3 sm:w-[92%] w-fit shadow-card rounded-small">
+      <div className="flex flex-col gap-10 sm:gap-7 mx-auto mt-5 p-7 sm:p-3 sm:w-[92%] w-fit shadow-card rounded-small">
         <div className="flex justify-between gap-4 sm:flex-col sm:gap-2">
           {fieldButtons.map((button) => (
             <button key={button.fieldSize} className={`!px-12 xl:!px-7 sm:py-3 rounded-micro border-[3px] border-transparent ${buttonStyles.default} ${selectedField === button.fieldSize ? 'bg-custom-gray text-white' : 'text-custom-gray !border-custom-gray'}`} title="switch" onClick={() => handleFieldSwitch(button.fieldSize)}>
