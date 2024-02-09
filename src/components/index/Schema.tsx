@@ -6,15 +6,15 @@ import {useState} from 'react'
 
 import Button from '../ui/Button'
 
-import fieldsImage from '../../assets/index/schema/fields.jpeg'
-import parkingImage from '../../assets/index/schema/parking.jpeg'
-import cloakroomImage from '../../assets/index/schema/cloakroom.jpeg'
-import toiletsImage from '../../assets/index/schema/toilets.jpeg'
-import showersImage from '../../assets/index/schema/showers.jpeg'
+import fieldsImage from '../../assets/index/schema/fields.webp'
+import parkingImage from '../../assets/index/schema/parking.webp'
+import cloakroomImage from '../../assets/index/schema/cloakroom.webp'
+import toiletsImage from '../../assets/index/schema/toilets.webp'
+import showersImage from '../../assets/index/schema/showers.webp'
 
 export default function Schema() {
   const [hoveredElement, setHoveredElement] = useState(null)
-  const [isHovering, setIsHovering] = useState(false) // State to track if mouse is hovering over any group
+  const [isHovering, setIsHovering] = useState(false)
 
   const handleMouseEnter = (elementId) => {
     setHoveredElement(elementId)
