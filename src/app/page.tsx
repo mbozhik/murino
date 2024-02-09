@@ -9,13 +9,13 @@ import Footer from '@/components/ui/Footer'
 export default function Home() {
   return (
     <div>
-      <Hero />
+      {/* <Hero />
       <About />
-      <Gallery />
-      {/* <Schema /> */}
-      <Prices />
+      <Gallery /> */}
+      <Schema />
+      {/* <Prices />
       <Contacts />
-      <Footer />
+      <Footer /> */}
     </div>
   )
 }
