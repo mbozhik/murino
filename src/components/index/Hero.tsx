@@ -4,7 +4,7 @@ import Link from 'next/link'
 import Header from '../ui/Header/Header'
 import Button from '../ui/Button'
 
-import HeroBackground from '../../assets/index/hero-background.png'
+import HeroBackground from '../../assets/index/hero-background.webp'
 import HeroText from '../../assets/index/hero-text.svg'
 
 import TelImage from '../../assets/index/socials/tel.svg'
