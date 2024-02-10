@@ -85,7 +85,7 @@ const Prices = () => {
       <div className="flex flex-col gap-10 sm:gap-7 mx-auto mt-5 p-7 sm:p-3 sm:w-[92%] w-fit shadow-card rounded-small">
         <div className="flex justify-between gap-4 sm:flex-col sm:gap-2">
           {fieldButtons.map((button) => (
-            <button key={button.fieldSize} className={`!px-12 xl:!px-7 sm:py-3 rounded-micro border-[3px] border-transparent ${buttonStyles.default} ${selectedField === button.fieldSize ? 'bg-custom-gray text-white' : 'text-custom-gray !border-custom-gray'}`} title="switch" onClick={() => handleFieldSwitch(button.fieldSize)}>
+            <button key={button.fieldSize} className={`!px-12 xl:!px-7 sm:py-3 rounded-smallest border-[3px] border-transparent ${buttonStyles.default} ${selectedField === button.fieldSize ? 'bg-custom-gray text-white' : 'text-custom-gray !border-custom-gray'}`} title="switch" onClick={() => handleFieldSwitch(button.fieldSize)}>
               футбольное поле <span className="text-custom-95">{button.label}</span>
             </button>
           ))}
@@ -99,7 +99,7 @@ const Prices = () => {
               {category.schedule.map((item: ScheduleItem, itemIndex: number) => (
                 <div key={itemIndex} className="flex items-center text-[38px] xl:text-3xl justify-between text-custom-gray">
                   <button
-                    className={`sm:text-base w-1/2 py-1 xl:py-2 sm:px-2 duration-200 bg-custom-e4 rounded-micro hover:bg-custom-gray hover:text-white ${selectedTime === item.time ? 'bg-custom-gray text-white' : ''}`}
+                    className={`sm:text-base w-1/2 py-1 xl:py-2 sm:px-2 duration-200 bg-custom-e4 rounded-smallest hover:bg-custom-gray hover:text-white ${selectedTime === item.time ? 'bg-custom-gray text-white' : ''}`}
                     onClick={() => {
                       handleTimeSelection(item.time, item.price)
                       console.log(`Выбранный временной слот: ${item.time}, Стоимость: ${item.price} | Футбольное поле: ${selectedField}`)

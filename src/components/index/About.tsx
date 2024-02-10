@@ -64,7 +64,7 @@ const Card: React.FC<CardProps> = ({title, image, hoverImage, text, points}) => 
           <p className="w-[60%] sm:w-full" dangerouslySetInnerHTML={{__html: text}} />
 
           {points && points.length > 0 && (
-            <ul className="pl-6 mt-10 list-decimal sm:mt-5 sm:px-6 sm:py-2 sm:list-disc sm:text-sm sm:border-2 sm:border-custom-e4 sm:rounded-md">
+            <ul className="pl-6 mt-10 list-decimal sm:mt-5 sm:px-7 sm:py-3 sm:list-disc sm:text-sm sm:border-2 sm:border-custom-e4 sm:rounded-md">
               {Object.values(points).map((point, index) => (
                 <li key={index} dangerouslySetInnerHTML={{__html: point}} />
               ))}

@@ -13,7 +13,7 @@ import MapImage from '../../assets/index/contacts/map.svg'
 import {linksData} from '@/lib/data'
 
 const buttonStyles = {
-  default: 'py-1 xl:py-2 sm:px-2 duration-150 rounded-micro hover:text-custom-gray hover:ring-[3px] hover:ring-custom-gray',
+  default: 'py-1 xl:py-2 sm:px-2 duration-150 rounded-smallest hover:text-custom-gray hover:ring-[3px] hover:ring-custom-gray',
   light: 'text-custom-gray bg-custom-e4',
   dark: 'text-white bg-custom-gray hover:bg-transparent',
 }

@@ -27,24 +27,27 @@ export default function Schema() {
   }
 
   const renderContent = () => {
+    const imageStyles = 'h-full object-cover rounded-smallest'
+
     if (isHovering) {
       switch (hoveredElement) {
         case 'fields':
-          return <Image src={fieldsImage} alt="Fields" />
+          return <Image className={imageStyles} src={fieldsImage} alt="Fields" />
         case 'parking':
-          return <Image src={parkingImage} alt="Parking" />
+          return <Image className={imageStyles} src={parkingImage} alt="Parking" />
         case 'cloakroom':
-          return <Image src={cloakroomImage} alt="Cloakroom" />
+          return <Image className={imageStyles} src={cloakroomImage} alt="Cloakroom" />
         case 'toilets':
-          return <Image src={toiletsImage} alt="Toilets" />
+          return <Image className={imageStyles} src={toiletsImage} alt="Toilets" />
         case 'showers':
-          return <Image src={showersImage} alt="Showers" />
+          return <Image className={imageStyles} src={showersImage} alt="Showers" />
         default:
           return null
       }
     } else {
       const spanStyles = 'w-[60%] text-2xl font-medium tracking-tighter text-center uppercase duration-200 leading-[1.15] text-custom-gray xl:text-xl sm:text-lg'
-      return <span className={spanStyles}>Нажмите на интересующий вас объект на схеме</span>
+      return <Image className={imageStyles} src={fieldsImage} alt="Fields" />
+      // return <span className={spanStyles}>Наведите курсор на одну из секций шатра на схеме</span>
     }
   }
 
@@ -56,7 +59,7 @@ export default function Schema() {
 
       <div className="mx-3 mt-5 shadow-card p-7 rounded-small">
         <div className="grid grid-cols-2 gap-5">
-          <div className="grid place-items-center border-[3px] border-custom-gray p-7 sm:p-3 rounded-small">{renderContent()}</div>
+          <div className="grid place-items-center border-[3px] border-custom-gray p-5 rounded-small">{renderContent()}</div>
 
           <div className="overflow-hidden shadow-card rounded-small aspect-[1.25/1] grid place-items-center p-7">
             <svg className="w-full" viewBox="0 0 821 646" fill="none" xmlns="http://www.w3.org/2000/svg">

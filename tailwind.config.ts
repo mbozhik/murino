@@ -34,7 +34,7 @@ const config = {
         large: '35px',
         medium: '30px',
         small: '20px',
-        micro: '15px',
+        smallest: '15px',
       },
       boxShadow: {
         base: '0px 0px 10px rgba(0, 0, 0, 0.25)',
