@@ -1,8 +1,9 @@
 'use client'
 
-import Image from 'next/image'
-
 import {useState} from 'react'
+
+import Image from 'next/image'
+import {motion} from 'framer-motion'
 
 import Button from '../ui/Button'
 
@@ -15,39 +16,58 @@ import showersImage from '../../assets/index/schema/showers.webp'
 export default function Schema() {
   const [hoveredElement, setHoveredElement] = useState(null)
   const [isHovering, setIsHovering] = useState(false)
+  let hoverTimeout
 
   const handleMouseEnter = (elementId) => {
-    setHoveredElement(elementId)
-    setIsHovering(true)
+    clearTimeout(hoverTimeout)
+
+    hoverTimeout = setTimeout(() => {
+      setHoveredElement(elementId)
+      setIsHovering(true)
+    }, 250)
   }
 
   const handleMouseLeave = () => {
-    setHoveredElement(null)
+    clearTimeout(hoverTimeout)
     setIsHovering(false)
   }
 
-  const renderContent = () => {
-    const imageStyles = 'h-full object-cover rounded-smallest'
+  const generateContent = (imageSrc, altText, classes = '') => {
+    const imageStyles = 'w-full h-full object-cover rounded-smallest'
 
+    return (
+      <motion.div className={`flex flex-col w-full gap-5 ${classes}`} initial={{opacity: 0}} animate={{opacity: isHovering ? 1 : 0}} transition={{duration: 0.25}}>
+        <Image className={imageStyles} src={imageSrc} alt={altText} />
+        <Button style="simple">{altText}</Button>
+      </motion.div>
+    )
+  }
+
+  const renderContent = () => {
     if (isHovering) {
       switch (hoveredElement) {
         case 'fields':
-          return <Image className={imageStyles} src={fieldsImage} alt="Fields" />
+          return generateContent(fieldsImage, '3 футбольных поля')
         case 'parking':
-          return <Image className={imageStyles} src={parkingImage} alt="Parking" />
+          return generateContent(parkingImage, '300 парковочных мест')
         case 'cloakroom':
-          return <Image className={imageStyles} src={cloakroomImage} alt="Cloakroom" />
+          return generateContent(cloakroomImage, 'Какая-то раздевалка')
         case 'toilets':
-          return <Image className={imageStyles} src={toiletsImage} alt="Toilets" />
+          return generateContent(toiletsImage, 'Наши туалеты')
         case 'showers':
-          return <Image className={imageStyles} src={showersImage} alt="Showers" />
+          return generateContent(showersImage, 'Душевые + раздевалки')
         default:
           return null
       }
     } else {
-      const spanStyles = 'w-[60%] text-2xl font-medium tracking-tighter text-center uppercase duration-200 leading-[1.15] text-custom-gray xl:text-xl sm:text-lg'
-      return <Image className={imageStyles} src={fieldsImage} alt="Fields" />
-      // return <span className={spanStyles}>Наведите курсор на одну из секций шатра на схеме</span>
+      const spanStyles = 'absolute mx-auto z-10 w-[60%] text-2xl font-medium tracking-tighter text-center uppercase duration-200 !leading-[1.15] text-custom-gray xl:text-xl sm:text-lg'
+      const spanText = 'Наведите курсор на&nbsp;одну из&nbsp;секций шатра на&nbsp;схеме'
+
+      return (
+        <div className="relative grid w-full h-full place-items-center">
+          <span className={spanStyles} dangerouslySetInnerHTML={{__html: spanText}}></span> {generateContent(fieldsImage, 'Ожидается наведение', 'invisible')}
+        </div>
+      )
     }
   }
 
@@ -59,9 +79,9 @@ export default function Schema() {
 
       <div className="mx-3 mt-5 shadow-card p-7 rounded-small">
         <div className="grid grid-cols-2 gap-5">
-          <div className="grid place-items-center border-[3px] border-custom-gray p-5 rounded-small">{renderContent()}</div>
+          <div className="grid place-items-center border-[3px] border-custom-gray p-7 sm:p-5 rounded-small">{renderContent()}</div>
 
-          <div className="overflow-hidden shadow-card rounded-small aspect-[1.25/1] grid place-items-center p-7">
+          <div className="grid overflow-hidden shadow-card rounded-small place-items-center p-7">
             <svg className="w-full" viewBox="0 0 821 646" fill="none" xmlns="http://www.w3.org/2000/svg">
               <g id="fields" onMouseEnter={() => handleMouseEnter('fields')} onMouseLeave={handleMouseLeave}>
                 <path fill="#fff" d="M430.5 2h389v642h-389z" />
