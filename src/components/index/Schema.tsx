@@ -72,9 +72,9 @@ export default function Schema() {
   }
 
   return (
-    <section id="schema" className="pt-10 mt-10 sm:pt-0 sm:sm:mt-14">
+    <section id="schema" className="sm:hidden pt-10 mt-10 sm:pt-0 sm:sm:mt-14">
       <Button style="heading" classes="mx-3">
-        Сколько стоит аренда?
+        Cхема шатра
       </Button>
 
       <div className="mx-3 mt-5 shadow-card p-7 rounded-small">
