@@ -69,16 +69,17 @@ export default function HeaderSwitch() {
   }, [showDynamicLink])
 
   return (
-    <nav className={`fixed z-50 sm:bottom-5 justify-center sm:w-[90%] sm:right-5 right-20 text-custom-gray rounded-large p-[3px] font-book flex gap-1 sm:gap-0 bg-white shadow-base ${!showDynamicLink && isMobile && 'bg-transparent shadow-none'}`}>
+    <nav className={`fixed z-50 sm:bottom-5 justify-center sm:w-[90%] sm:right-5 right-20 text-custom-gray rounded-large p-[3px] font-book flex gap-1 sm:gap-0 bg-white sm:bg-transparent shadow-base sm:shadow-none`}>
       {!isMobile &&
         links.slice(0, 3).map((link, index) => (
           <HeaderLink key={index} link={link.link} active={link.link === activeLink}>
             {link.title}
           </HeaderLink>
         ))}
+
       {showDynamicLink &&
         links.slice(-1).map((link, index) => (
-          <HeaderLink key={index} link={link.link} classes="bg-custom-e4 sm:bg-transparent sm:uppercase hover:bg-custom-green hover:text-white duration-200">
+          <HeaderLink key={index} link={link.link} classes={`bg-custom-e4 sm:bg-white sm:uppercase sm:w-full sm:text-center sm:shadow-btn duration-200 ${!isMobile ? 'hover:bg-custom-green hover:text-white' : 'active:bg-custom-green active:text-white'}`}>
             {link.title}
           </HeaderLink>
         ))}
