@@ -66,10 +66,10 @@ export default function HeaderSwitch() {
     return () => {
       window.removeEventListener('scroll', handleScroll)
     }
-  }, [showDynamicLink, isMobile])
+  }, [showDynamicLink])
 
   return (
-    <div className={`fixed z-50 sm:bottom-5 justify-center sm:w-[90%] sm:right-5 right-20 text-custom-gray rounded-large p-[3px] font-book flex gap-1 sm:gap-0 bg-white shadow-base ${showDynamicLink && isMobile ? 'bg-white' : 'sm:bg-transparent'}`}>
+    <nav className={`fixed z-50 sm:bottom-5 justify-center sm:w-[90%] sm:right-5 right-20 text-custom-gray rounded-large p-[3px] font-book flex gap-1 sm:gap-0 bg-white shadow-base ${!showDynamicLink && isMobile && 'bg-transparent shadow-none'}`}>
       {!isMobile &&
         links.slice(0, 3).map((link, index) => (
           <HeaderLink key={index} link={link.link} active={link.link === activeLink}>
@@ -82,6 +82,6 @@ export default function HeaderSwitch() {
             {link.title}
           </HeaderLink>
         ))}
-    </div>
+    </nav>
   )
 }
