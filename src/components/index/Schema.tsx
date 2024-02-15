@@ -94,8 +94,8 @@ export default function Schema() {
                   <rect width="352" height="175" x="449" y="30.5" stroke="#454545" strokeWidth="6" mask="url(#path-2-inside-1_3482_3185)" rx="2" />
                   <path id="Rectangle 85" fill="#454545" d="M624 30.5h3v175h-3z" />
                   <circle id="Ellipse 1" cx="625" cy="118.5" r="48.5" stroke="#454545" strokeWidth="3" />
-                  <path id="Ellipse 2" fill="#D9D9D9" stroke="#454545" strokeWidth="3" d="M450.5 70.023a48.498 48.498 0 0 1 47 48.477 48.512 48.512 0 0 1-14.205 34.295 48.512 48.512 0 0 1-32.795 14.182V70.023Z" />
-                  <path id="Ellipse 3" fill="#D9D9D9" stroke="#454545" strokeWidth="3" d="M799.5 166.977a48.512 48.512 0 0 1-32.795-14.182A48.512 48.512 0 0 1 752.5 118.5a48.487 48.487 0 0 1 14.205-34.295A48.51 48.51 0 0 1 799.5 70.023v96.954Z" />
+                  <path id="Ellipse 2" stroke="#454545" strokeWidth="3" d="M450.5 70.023a48.498 48.498 0 0 1 47 48.477 48.512 48.512 0 0 1-14.205 34.295 48.512 48.512 0 0 1-32.795 14.182V70.023Z" />
+                  <path id="Ellipse 3" stroke="#454545" strokeWidth="3" d="M799.5 166.977a48.512 48.512 0 0 1-32.795-14.182A48.512 48.512 0 0 1 752.5 118.5a48.487 48.487 0 0 1 14.205-34.295A48.51 48.51 0 0 1 799.5 70.023v96.954Z" />
                 </g>
                 <g id="Frame 200">
                   <mask id="path-7-inside-2_3482_3185" fill="#fff">
@@ -105,8 +105,8 @@ export default function Schema() {
                   <rect width="352" height="175" x="449" y="235.5" stroke="#454545" strokeWidth="6" mask="url(#path-7-inside-2_3482_3185)" rx="2" />
                   <path id="Rectangle 85_2" fill="#454545" d="M624 235.5h3v175h-3z" />
                   <circle id="Ellipse 1_2" cx="625" cy="323.5" r="48.5" stroke="#454545" strokeWidth="3" />
-                  <path id="Ellipse 2_2" fill="#D9D9D9" stroke="#454545" strokeWidth="3" d="M450.5 275.023a48.512 48.512 0 0 1 32.795 14.182A48.512 48.512 0 0 1 497.5 323.5a48.512 48.512 0 0 1-14.205 34.295 48.512 48.512 0 0 1-32.795 14.182v-96.954Z" />
-                  <path id="Ellipse 3_2" fill="#D9D9D9" stroke="#454545" strokeWidth="3" d="M799.5 371.977a48.512 48.512 0 0 1-32.795-14.182A48.512 48.512 0 0 1 752.5 323.5a48.512 48.512 0 0 1 14.205-34.295 48.512 48.512 0 0 1 32.795-14.182v96.954Z" />
+                  <path id="Ellipse 2_2" stroke="#454545" strokeWidth="3" d="M450.5 275.023a48.512 48.512 0 0 1 32.795 14.182A48.512 48.512 0 0 1 497.5 323.5a48.512 48.512 0 0 1-14.205 34.295 48.512 48.512 0 0 1-32.795 14.182v-96.954Z" />
+                  <path id="Ellipse 3_2" stroke="#454545" strokeWidth="3" d="M799.5 371.977a48.512 48.512 0 0 1-32.795-14.182A48.512 48.512 0 0 1 752.5 323.5a48.512 48.512 0 0 1 14.205-34.295 48.512 48.512 0 0 1 32.795-14.182v96.954Z" />
                 </g>
                 <g id="Frame 201">
                   <mask id="path-12-inside-3_3482_3185" fill="#fff">
@@ -116,8 +116,8 @@ export default function Schema() {
                   <rect width="352" height="175" x="449" y="440.5" stroke="#454545" strokeWidth="6" mask="url(#path-12-inside-3_3482_3185)" rx="2" />
                   <path id="Rectangle 85_3" fill="#454545" d="M624 440.5h3v175h-3z" />
                   <circle id="Ellipse 1_3" cx="625" cy="528.5" r="48.5" stroke="#454545" strokeWidth="3" />
-                  <path id="Ellipse 2_3" fill="#D9D9D9" stroke="#454545" strokeWidth="3" d="M450.5 480.023a48.512 48.512 0 0 1 32.795 14.182A48.512 48.512 0 0 1 497.5 528.5a48.512 48.512 0 0 1-14.205 34.295 48.512 48.512 0 0 1-32.795 14.182v-96.954Z" />
-                  <path id="Ellipse 3_3" fill="#D9D9D9" stroke="#454545" strokeWidth="3" d="M799.5 576.977a48.512 48.512 0 0 1-32.795-14.182A48.512 48.512 0 0 1 752.5 528.5a48.512 48.512 0 0 1 14.205-34.295 48.512 48.512 0 0 1 32.795-14.182v96.954Z" />
+                  <path id="Ellipse 2_3" stroke="#454545" strokeWidth="3" d="M450.5 480.023a48.512 48.512 0 0 1 32.795 14.182A48.512 48.512 0 0 1 497.5 528.5a48.512 48.512 0 0 1-14.205 34.295 48.512 48.512 0 0 1-32.795 14.182v-96.954Z" />
+                  <path id="Ellipse 3_3" stroke="#454545" strokeWidth="3" d="M799.5 576.977a48.512 48.512 0 0 1-32.795-14.182A48.512 48.512 0 0 1 752.5 528.5a48.512 48.512 0 0 1 14.205-34.295 48.512 48.512 0 0 1 32.795-14.182v96.954Z" />
                 </g>
               </g>
               <g id="parking" onMouseEnter={() => handleMouseEnter('parking')} onMouseLeave={handleMouseLeave}>
