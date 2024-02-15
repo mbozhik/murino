@@ -1,8 +1,9 @@
 'use client'
 
-import Link from 'next/link'
-
 import {useState, useEffect} from 'react'
+import {isMobile} from '@/lib/utils'
+
+import Link from 'next/link'
 
 interface HeaderLinkProps {
   link: string
@@ -27,8 +28,6 @@ const links = [
 ]
 
 export default function HeaderSwitch() {
-  const isMobile = typeof window !== 'undefined' && /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent)
-
   const [activeLink, setActiveLink] = useState(links[0].link)
   const [showDynamicLink, setShowDynamicLink] = useState(false)
 

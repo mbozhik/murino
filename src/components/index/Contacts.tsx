@@ -1,6 +1,7 @@
 'use client'
 
 import {useState} from 'react'
+import {isMobile} from '@/lib/utils'
 
 import Link from 'next/link'
 import Image from 'next/image'
@@ -62,8 +63,6 @@ export default function Contacts() {
       alert('неееееееееее скопировано!')
     }
   }
-
-  const isMobile = typeof window !== 'undefined' && /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent)
 
   return (
     <section id="contacts" className="my-28 xl:my-20 sm:my-14">
