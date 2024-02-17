@@ -24,7 +24,7 @@ const links = [
   {title: 'О нас', link: '#about-us'},
   {title: 'Цены', link: '#prices'},
   {title: 'Контакты', link: '#contacts'},
-  {title: 'Забронировать', link: '#prices'},
+  {title: 'Забронировать', link: '#contacts'},
 ]
 
 export default function HeaderSwitch() {

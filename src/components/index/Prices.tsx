@@ -118,7 +118,7 @@ const Prices = () => {
         ))}
 
         {/* <button
-          className={`!text-white  !bg-custom-green duration-200 hover:!bg-transparent hover:!ring-[3px] hover:!ring-custom-green hover:!text-custom-green ${buttonStyles.hero} ${buttonStyles.default}`}
+          className={`!text-white !bg-custom-green duration-200 hover:!bg-transparent hover:!ring-[3px] hover:!ring-custom-green hover:!text-custom-green ${buttonStyles.hero} ${buttonStyles.default}`}
           onClick={() => {
             if (selectedTime && selectedPrice) {
               alert(`Выбранный временной слот: ${selectedTime}, Стоимость: ${selectedPrice} | Футбольное поле: ${selectedField}`)
@@ -129,6 +129,10 @@ const Prices = () => {
         >
           Забронировать
         </button> */}
+
+        <Button style="hero" link="#contacts" classes="!text-white !bg-custom-green duration-200 hover:!bg-transparent hover:!ring-[3px] hover:!ring-custom-green hover:!text-custom-green">
+          Забронировать
+        </Button>
       </div>
     </section>
   )
