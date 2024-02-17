@@ -1,6 +1,6 @@
 'use client'
 
-import {useState} from 'react'
+import {useState, useEffect} from 'react'
 import {isMobile} from '@/lib/utils'
 
 import Link from 'next/link'
@@ -35,6 +35,7 @@ const Button: React.FC<ButtonProps> = ({href, target, className, onClick, childr
 
 export default function Contacts() {
   const [copiedText, setCopiedText] = useState(null)
+  const [clickAnimation, setClickAnimation] = useState(false)
 
   const handleCopyClick = async (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
     event.preventDefault()
@@ -64,6 +65,20 @@ export default function Contacts() {
     }
   }
 
+  useEffect(() => {
+    const clickTimeout = setTimeout(() => {
+      setClickAnimation(true)
+
+      const removeClickTimeout = setTimeout(() => {
+        setClickAnimation(false)
+      }, 2000)
+
+      return () => clearTimeout(removeClickTimeout)
+    }, 1000)
+
+    return () => clearTimeout(clickTimeout)
+  }, [])
+
   return (
     <section id="contacts" className="my-28 xl:my-20 sm:my-14">
       <div className="flex items-center justify-between mx-3 sm:flex-col rounded-small shadow-card p-7 sm:p-3 gap-7">
@@ -74,11 +89,11 @@ export default function Contacts() {
         <div className="flex flex-col items-center gap-5 justify-self-center w-[75%] sm:w-full px-10 sm:px-0">
           <div className="flex flex-col border-[3px] border-custom-gray rounded-small w-full p-5 sm:px-3 sm:py-5 gap-5">
             <h1 className="text-2xl font-medium text-center uppercase sm:text-base sm:leading-tight text-custom-gray">
-              телфон <span className="text-[#c2c2c2]">(круглосуточно)</span>
+              телефон <span className="text-[#c2c2c2]">(круглосуточно)</span>
             </h1>
 
             <div className="flex flex-col gap-8 sm:gap-2 text-[38px] xl:text-3xl sm:text-xl text-center uppercase">
-              <Button target="" href={linksData.tel.href} className={`${buttonStyles.default} ${buttonStyles.light}`}>
+              <Button target="" href={linksData.tel.href} className={`${buttonStyles.default} ${buttonStyles.light} ${clickAnimation ? 'animation-click' : ''}`}>
                 {linksData.tel.text}
               </Button>
 
