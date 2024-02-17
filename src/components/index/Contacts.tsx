@@ -1,6 +1,6 @@
 'use client'
 
-import {useState, useEffect} from 'react'
+import {useState, useEffect, useRef, forwardRef} from 'react'
 import {isMobile} from '@/lib/utils'
 
 import Link from 'next/link'
@@ -24,18 +24,23 @@ interface ButtonProps {
   target: string
   className: string
   onClick?: (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => void
+  ref?: React.Ref<HTMLAnchorElement>
   children: React.ReactNode
 }
 
-const Button: React.FC<ButtonProps> = ({href, target, className, onClick, children}) => (
-  <Link href={href} target={target} className={className} onClick={onClick}>
-    {children}
-  </Link>
-)
+const Button = forwardRef<HTMLAnchorElement, ButtonProps>(function ButtonImpl({href, target, className, onClick, children}, ref) {
+  return (
+    <Link ref={ref} href={href} target={target} className={className} onClick={onClick}>
+      {children}
+    </Link>
+  )
+})
 
 export default function Contacts() {
   const [copiedText, setCopiedText] = useState(null)
+
   const [clickAnimation, setClickAnimation] = useState(false)
+  const buttonRef = useRef<HTMLAnchorElement>(null)
 
   const handleCopyClick = async (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
     event.preventDefault()
@@ -66,17 +71,38 @@ export default function Contacts() {
   }
 
   useEffect(() => {
-    const clickTimeout = setTimeout(() => {
-      setClickAnimation(true)
+    const buttonRefCopy = buttonRef.current
 
-      const removeClickTimeout = setTimeout(() => {
-        setClickAnimation(false)
-      }, 2000)
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          const clickTimeout = setTimeout(() => {
+            setClickAnimation(true)
 
-      return () => clearTimeout(removeClickTimeout)
-    }, 1000)
+            const removeClickTimeout = setTimeout(() => {
+              setClickAnimation(false)
+            }, 2000)
 
-    return () => clearTimeout(clickTimeout)
+            return () => clearTimeout(removeClickTimeout)
+          }, 1000)
+
+          return () => clearTimeout(clickTimeout)
+        }
+      },
+      {
+        threshold: 0.5,
+      },
+    )
+
+    if (buttonRefCopy) {
+      observer.observe(buttonRefCopy)
+    }
+
+    return () => {
+      if (buttonRefCopy) {
+        observer.unobserve(buttonRefCopy)
+      }
+    }
   }, [])
 
   return (
@@ -93,7 +119,7 @@ export default function Contacts() {
             </h1>
 
             <div className="flex flex-col gap-8 sm:gap-2 text-[38px] xl:text-3xl sm:text-xl text-center uppercase">
-              <Button target="" href={linksData.tel.href} className={`${buttonStyles.default} ${buttonStyles.light} ${clickAnimation ? 'animation-click' : ''}`}>
+              <Button ref={buttonRef} target="" href={linksData.tel.href} className={`${buttonStyles.default} ${buttonStyles.light} ${clickAnimation ? 'animation-click' : ''}`}>
                 {linksData.tel.text}
               </Button>
 
