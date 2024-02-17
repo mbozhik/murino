@@ -99,7 +99,7 @@ const Prices = () => {
               {category.schedule.map((item: ScheduleItem, itemIndex: number) => (
                 <div key={itemIndex} className="flex items-center text-[38px] xl:text-3xl justify-between text-custom-gray">
                   <button
-                    className={`sm:text-base w-1/2 py-1 xl:py-2 sm:px-2 duration-200 bg-custom-e4 rounded-smallest hover:bg-custom-gray hover:text-white ${selectedTime === item.time ? 'bg-custom-gray text-white' : ''}`}
+                    className={`sm:text-base w-1/2 py-1 xl:py-2 sm:px-2 duration-200 bg-custom-e4 rounded-smallest ${selectedTime === item.time ? '' : ''}`}
                     onClick={() => {
                       handleTimeSelection(item.time, item.price)
                       console.log(`Выбранный временной слот: ${item.time}, Стоимость: ${item.price} | Футбольное поле: ${selectedField}`)
