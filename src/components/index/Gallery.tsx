@@ -1,6 +1,5 @@
 'use client'
 
-import {useEffect, useMemo} from 'react'
 import {isMobile} from '@/lib/utils'
 
 import Image from 'next/image'
@@ -47,14 +46,7 @@ const SlideButton: React.FC<SlideButtonProps> = ({position}) => {
 }
 
 export default function Gallery() {
-  const sliderImages = useMemo(() => [image1, image2, image3, image4, image5, image6, image7, image8, image9, image10, image11], [])
-
-  useEffect(() => {
-    sliderImages.forEach((image) => {
-      const img = document.createElement('img')
-      img.src = image.src
-    })
-  }, [sliderImages])
+  const sliderImages = [image1, image2, image3, image4, image5, image6, image7, image8, image9, image10, image11]
 
   return (
     <section className="mt-20 sm:mt-10">
@@ -79,7 +71,7 @@ export default function Gallery() {
 
         {sliderImages.map((image, key) => (
           <SwiperSlide className="relative grid place-items-center" key={key}>
-            <Image quality={100} className="absolute inset-0 block object-cover s-full" src={image.src} width={2000} height={2000} alt="" />
+            <Image loading={'eager'} quality={100} className="absolute inset-0 block object-cover s-full" src={image} width={2000} height={2000} alt="" />
           </SwiperSlide>
         ))}
       </Swiper>
