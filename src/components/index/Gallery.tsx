@@ -1,8 +1,16 @@
 'use client'
 
+import {useEffect, useMemo} from 'react'
 import {isMobile} from '@/lib/utils'
 
 import Image from 'next/image'
+
+import {Swiper, SwiperSlide, useSwiper} from 'swiper/react'
+import {Autoplay, Scrollbar, Pagination} from 'swiper/modules'
+
+import 'swiper/css'
+import 'swiper/css/scrollbar'
+import 'swiper/css/pagination'
 
 import image1 from '@/assets/index/gallery/1.webp'
 import image2 from '@/assets/index/gallery/2.webp'
@@ -15,13 +23,6 @@ import image8 from '@/assets/index/gallery/8.webp'
 import image9 from '@/assets/index/gallery/9.webp'
 import image10 from '@/assets/index/gallery/10.webp'
 import image11 from '@/assets/index/gallery/11.webp'
-
-import {Swiper, SwiperSlide, useSwiper} from 'swiper/react'
-import {Autoplay, Scrollbar, Pagination} from 'swiper/modules'
-
-import 'swiper/css'
-import 'swiper/css/scrollbar'
-import 'swiper/css/pagination'
 
 interface SlideButtonProps {
   position: 'left' | 'right'
@@ -46,7 +47,14 @@ const SlideButton: React.FC<SlideButtonProps> = ({position}) => {
 }
 
 export default function Gallery() {
-  const sliderImages = [image1, image2, image3, image4, image5, image6, image7, image8, image9, image10, image11]
+  const sliderImages = useMemo(() => [image1, image2, image3, image4, image5, image6, image7, image8, image9, image10, image11], [])
+
+  useEffect(() => {
+    sliderImages.forEach((image) => {
+      const img = document.createElement('img')
+      img.src = image.src
+    })
+  }, [sliderImages])
 
   return (
     <section className="mt-20 sm:mt-10">
@@ -71,7 +79,7 @@ export default function Gallery() {
 
         {sliderImages.map((image, key) => (
           <SwiperSlide className="relative grid place-items-center" key={key}>
-            <Image quality={100} className="absolute inset-0 block object-cover s-full" src={image} width={2000} height={2000} alt="" />
+            <Image quality={100} className="absolute inset-0 block object-cover s-full" src={image.src} width={2000} height={2000} alt="" />
           </SwiperSlide>
         ))}
       </Swiper>
