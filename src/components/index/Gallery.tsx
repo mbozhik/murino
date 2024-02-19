@@ -71,7 +71,7 @@ export default function Gallery() {
 
         {sliderImages.map((image, key) => (
           <SwiperSlide className="relative grid place-items-center" key={key}>
-            <Image className="absolute inset-0 block object-cover s-full" src={image} width={2000} height={2000} alt="" />
+            <Image quality={100} className="absolute inset-0 block object-cover s-full" src={image} width={2000} height={2000} alt="" />
           </SwiperSlide>
         ))}
       </Swiper>

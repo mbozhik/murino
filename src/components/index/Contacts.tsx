@@ -126,7 +126,7 @@ export default function Contacts() {
               <div className="flex flex-col gap-3 sm:gap-2">
                 {['vk', 'tg'].map((socialMedia) => (
                   <Button key={socialMedia} href={linksData[socialMedia].href} target="_blank" className={`group inline-flex justify-center items-center gap-3 sm:gap-2 ${buttonStyles.default} ${buttonStyles.dark}`}>
-                    {socialMedia === 'vk' ? <Image className="duration-150 s-10 sm:s-7 group-hover:scale-125" src={VkImage} width={70} height={70} alt="" /> : <Image className="duration-150 s-10 sm:s-7 group-hover:scale-125" src={TgImage} width={70} height={70} alt="" />}
+                    {socialMedia === 'vk' ? <Image quality={100} className="duration-150 s-10 sm:s-7 group-hover:scale-125" src={VkImage} width={70} height={70} alt="" /> : <Image quality={100} className="duration-150 s-10 sm:s-7 group-hover:scale-125" src={TgImage} width={70} height={70} alt="" />}
                     {linksData[socialMedia].text}
                   </Button>
                 ))}
@@ -144,13 +144,13 @@ export default function Contacts() {
                 ) : (
                   <>
                     {linksData.copy.text}
-                    <Image className="duration-200 s-7 xl:s-5 sm:s-3 group-hover:scale-110" src={CopyImage} width={70} height={70} alt="" />
+                    <Image quality={100} className="duration-200 s-7 xl:s-5 sm:s-3 group-hover:scale-110" src={CopyImage} width={70} height={70} alt="" />
                   </>
                 )}
               </Button>
 
               <Button href={linksData.map.href} target="_blank" className={`group inline-flex justify-center items-center gap-3 sm:gap-2 ${buttonStyles.default} ${buttonStyles.dark} normal-case xl:text-2xl`}>
-                <Image className="duration-150 s-10 sm:s-7 group-hover:scale-125" src={MapImage} width={70} height={70} alt="" />
+                <Image quality={100} className="duration-150 s-10 sm:s-7 group-hover:scale-125" src={MapImage} width={70} height={70} alt="" />
                 {linksData.map.text}
               </Button>
             </div>

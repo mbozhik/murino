@@ -24,7 +24,7 @@ function HeroSocials() {
     <div className="flex gap-4">
       {iconsData.map((icon, index) => (
         <Link href={icon.link} target={icon.target} title="icon" key={index} className="duration-200 s-14 xl:s-10 hover:scale-110">
-          <Image className="object-cover s-full" src={icon.image} alt={`${icon.link} icon`} width={48} height={48} />
+          <Image quality={100} className="object-cover s-full" src={icon.image} alt={`${icon.link} icon`} width={48} height={48} />
         </Link>
       ))}
     </div>
@@ -38,7 +38,7 @@ export default function Hero() {
     <section id="hero" className={`relative flex flex-col flex-1 justify-between py-12 sm:py-7 duration-500 ${screenHeight}`}>
       <Header />
       <div className="grid place-items-center">
-        <Image className="xl:w-[30%] sm:w-[70%] object-cover" src={HeroText} alt="" />
+        <Image priority quality={100} className="xl:w-[30%] sm:w-[70%] object-cover" src={HeroText} alt="" />
       </div>
       <div className="flex items-center justify-between mx-20 sm:flex-col sm:gap-5 sm:mx-5">
         <Button style="hero" link="#contacts" classes="sm:text-lg sm:w-full">
@@ -48,7 +48,7 @@ export default function Hero() {
       </div>
 
       <div className="absolute inset-0 bg-black s-full -z-10">
-        <Image className="object-cover opacity-65 -z-10" src={HeroBackground} fill alt="" />
+        <Image priority quality={100} className="object-cover opacity-65 -z-10" src={HeroBackground} fill alt="" />
       </div>
     </section>
   )
