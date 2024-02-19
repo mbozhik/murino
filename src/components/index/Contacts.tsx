@@ -14,7 +14,7 @@ import MapImage from '../../assets/index/contacts/map.svg'
 import {linksData} from '@/lib/data'
 
 const buttonStyles = {
-  default: 'py-1 xl:py-2 sm:px-2 duration-150 rounded-smallest hover:text-custom-gray hover:ring-[3px] hover:ring-custom-gray',
+  default: 'sm:text-sm py-1 xl:py-2 sm:px-2 duration-150 rounded-smallest hover:text-custom-gray hover:ring-[3px] hover:ring-custom-gray',
   light: 'text-custom-gray bg-custom-e4',
   dark: 'text-white bg-custom-gray hover:bg-transparent',
 }
@@ -138,18 +138,18 @@ export default function Contacts() {
             <h1 className="text-2xl font-medium text-center uppercase sm:text-base text-custom-gray">адрес</h1>
 
             <div className="flex flex-col gap-3 sm:gap-2 text-[38px] xl:text-3xl sm:text-xl text-center uppercase">
-              <Button href={linksData.copy.href} target="_blank" onClick={handleCopyClick} className={`group inline-flex justify-center items-center gap-3 sm:gap-2 ${buttonStyles.default} ${buttonStyles.light} text-2xl sm:text-sm font-medium py-4`}>
+              <Button href={linksData.copy.href} target="_blank" onClick={handleCopyClick} className={`group inline-flex justify-center items-center gap-3 sm:gap-2 ${buttonStyles.default} ${buttonStyles.light} text-2xl xl:text-lg font-medium py-4`}>
                 {copiedText ? (
                   <span>{copiedText}</span>
                 ) : (
                   <>
                     {linksData.copy.text}
-                    <Image className="duration-200 s-7 sm:s-3 group-hover:scale-110" src={CopyImage} width={70} height={70} alt="" />
+                    <Image className="duration-200 s-7 xl:s-5 sm:s-3 group-hover:scale-110" src={CopyImage} width={70} height={70} alt="" />
                   </>
                 )}
               </Button>
 
-              <Button href={linksData.map.href} target="_blank" className={`group inline-flex justify-center items-center gap-3 sm:gap-2 ${buttonStyles.default} ${buttonStyles.dark} normal-case sm:text-sm`}>
+              <Button href={linksData.map.href} target="_blank" className={`group inline-flex justify-center items-center gap-3 sm:gap-2 ${buttonStyles.default} ${buttonStyles.dark} normal-case xl:text-2xl`}>
                 <Image className="duration-150 s-10 sm:s-7 group-hover:scale-125" src={MapImage} width={70} height={70} alt="" />
                 {linksData.map.text}
               </Button>
