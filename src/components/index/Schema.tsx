@@ -10,6 +10,7 @@ import Button from '../ui/Button'
 import fieldsImage from '../../assets/index/schema/fields.webp'
 import parkingImage from '../../assets/index/schema/parking.webp'
 import cloakroomImage from '../../assets/index/schema/cloakroom.webp'
+import gymnastImage from '../../assets/index/schema/gymnast.webp'
 import toiletsImage from '../../assets/index/schema/toilets.webp'
 import showersImage from '../../assets/index/schema/showers.webp'
 
@@ -36,7 +37,7 @@ export default function Schema() {
     const imageStyles = 'w-full h-full object-cover rounded-smallest'
 
     return (
-      <motion.div className={`flex flex-col w-full gap-5 ${classes}`} initial={{opacity: 0}} animate={{opacity: isHovering ? 1 : 0}} transition={{duration: 0.25}}>
+      <motion.div className={`flex flex-col h-full gap-5 ${classes}`} initial={{opacity: 0}} animate={{opacity: isHovering ? 1 : 0}} transition={{duration: 0.25}}>
         <Image className={imageStyles} src={imageSrc} alt={altText} />
         <Button style="simple">{altText}</Button>
       </motion.div>
@@ -52,6 +53,8 @@ export default function Schema() {
           return generateContent(parkingImage, '300 парковочных мест')
         case 'cloakroom':
           return generateContent(cloakroomImage, 'Какая-то раздевалка')
+        case 'gymnast':
+          return generateContent(gymnastImage, 'Штука для танцев')
         case 'toilets':
           return generateContent(toiletsImage, 'Наши туалеты')
         case 'showers':
@@ -72,16 +75,16 @@ export default function Schema() {
   }
 
   return (
-    <section id="schema" className="sm:hidden pt-10 mt-10 sm:pt-0 sm:sm:mt-14">
+    <section id="schema" className="pt-10 mt-10 sm:hidden sm:pt-0 sm:sm:mt-14">
       <Button style="heading" classes="mx-3">
         Cхема шатра
       </Button>
 
       <div className="mx-3 mt-5 shadow-card p-7 rounded-small">
-        <div className="grid grid-cols-2 gap-5">
-          <div className="grid place-items-center border-[3px] border-custom-gray p-7 sm:p-5 rounded-small">{renderContent()}</div>
+        <div className="grid grid-cols-7 gap-5">
+          <div className="grid col-span-3 place-items-center border-[3px] border-custom-gray p-7 sm:p-5 rounded-small">{renderContent()}</div>
 
-          <div className="grid overflow-hidden shadow-card rounded-small place-items-center p-7">
+          <div className="grid col-span-4 overflow-hidden shadow-card rounded-small place-items-center p-7">
             <svg className="w-full" viewBox="0 0 821 646" fill="none" xmlns="http://www.w3.org/2000/svg">
               <g id="fields" onMouseEnter={() => handleMouseEnter('fields')} onMouseLeave={handleMouseLeave}>
                 <path fill="#fff" d="M430.5 2h389v642h-389z" />
@@ -94,8 +97,8 @@ export default function Schema() {
                   <rect width="352" height="175" x="449" y="30.5" stroke="#454545" strokeWidth="6" mask="url(#path-2-inside-1_3482_3185)" rx="2" />
                   <path id="Rectangle 85" fill="#454545" d="M624 30.5h3v175h-3z" />
                   <circle id="Ellipse 1" cx="625" cy="118.5" r="48.5" stroke="#454545" strokeWidth="3" />
-                  <path id="Ellipse 2" fill="#D9D9D9" stroke="#454545" strokeWidth="3" d="M450.5 70.023a48.498 48.498 0 0 1 47 48.477 48.512 48.512 0 0 1-14.205 34.295 48.512 48.512 0 0 1-32.795 14.182V70.023Z" />
-                  <path id="Ellipse 3" fill="#D9D9D9" stroke="#454545" strokeWidth="3" d="M799.5 166.977a48.512 48.512 0 0 1-32.795-14.182A48.512 48.512 0 0 1 752.5 118.5a48.487 48.487 0 0 1 14.205-34.295A48.51 48.51 0 0 1 799.5 70.023v96.954Z" />
+                  <path id="Ellipse 2" stroke="#454545" strokeWidth="3" d="M450.5 70.023a48.498 48.498 0 0 1 47 48.477 48.512 48.512 0 0 1-14.205 34.295 48.512 48.512 0 0 1-32.795 14.182V70.023Z" />
+                  <path id="Ellipse 3" stroke="#454545" strokeWidth="3" d="M799.5 166.977a48.512 48.512 0 0 1-32.795-14.182A48.512 48.512 0 0 1 752.5 118.5a48.487 48.487 0 0 1 14.205-34.295A48.51 48.51 0 0 1 799.5 70.023v96.954Z" />
                 </g>
                 <g id="Frame 200">
                   <mask id="path-7-inside-2_3482_3185" fill="#fff">
@@ -105,8 +108,8 @@ export default function Schema() {
                   <rect width="352" height="175" x="449" y="235.5" stroke="#454545" strokeWidth="6" mask="url(#path-7-inside-2_3482_3185)" rx="2" />
                   <path id="Rectangle 85_2" fill="#454545" d="M624 235.5h3v175h-3z" />
                   <circle id="Ellipse 1_2" cx="625" cy="323.5" r="48.5" stroke="#454545" strokeWidth="3" />
-                  <path id="Ellipse 2_2" fill="#D9D9D9" stroke="#454545" strokeWidth="3" d="M450.5 275.023a48.512 48.512 0 0 1 32.795 14.182A48.512 48.512 0 0 1 497.5 323.5a48.512 48.512 0 0 1-14.205 34.295 48.512 48.512 0 0 1-32.795 14.182v-96.954Z" />
-                  <path id="Ellipse 3_2" fill="#D9D9D9" stroke="#454545" strokeWidth="3" d="M799.5 371.977a48.512 48.512 0 0 1-32.795-14.182A48.512 48.512 0 0 1 752.5 323.5a48.512 48.512 0 0 1 14.205-34.295 48.512 48.512 0 0 1 32.795-14.182v96.954Z" />
+                  <path id="Ellipse 2_2" stroke="#454545" strokeWidth="3" d="M450.5 275.023a48.512 48.512 0 0 1 32.795 14.182A48.512 48.512 0 0 1 497.5 323.5a48.512 48.512 0 0 1-14.205 34.295 48.512 48.512 0 0 1-32.795 14.182v-96.954Z" />
+                  <path id="Ellipse 3_2" stroke="#454545" strokeWidth="3" d="M799.5 371.977a48.512 48.512 0 0 1-32.795-14.182A48.512 48.512 0 0 1 752.5 323.5a48.512 48.512 0 0 1 14.205-34.295 48.512 48.512 0 0 1 32.795-14.182v96.954Z" />
                 </g>
                 <g id="Frame 201">
                   <mask id="path-12-inside-3_3482_3185" fill="#fff">
@@ -116,8 +119,8 @@ export default function Schema() {
                   <rect width="352" height="175" x="449" y="440.5" stroke="#454545" strokeWidth="6" mask="url(#path-12-inside-3_3482_3185)" rx="2" />
                   <path id="Rectangle 85_3" fill="#454545" d="M624 440.5h3v175h-3z" />
                   <circle id="Ellipse 1_3" cx="625" cy="528.5" r="48.5" stroke="#454545" strokeWidth="3" />
-                  <path id="Ellipse 2_3" fill="#D9D9D9" stroke="#454545" strokeWidth="3" d="M450.5 480.023a48.512 48.512 0 0 1 32.795 14.182A48.512 48.512 0 0 1 497.5 528.5a48.512 48.512 0 0 1-14.205 34.295 48.512 48.512 0 0 1-32.795 14.182v-96.954Z" />
-                  <path id="Ellipse 3_3" fill="#D9D9D9" stroke="#454545" strokeWidth="3" d="M799.5 576.977a48.512 48.512 0 0 1-32.795-14.182A48.512 48.512 0 0 1 752.5 528.5a48.512 48.512 0 0 1 14.205-34.295 48.512 48.512 0 0 1 32.795-14.182v96.954Z" />
+                  <path id="Ellipse 2_3" stroke="#454545" strokeWidth="3" d="M450.5 480.023a48.512 48.512 0 0 1 32.795 14.182A48.512 48.512 0 0 1 497.5 528.5a48.512 48.512 0 0 1-14.205 34.295 48.512 48.512 0 0 1-32.795 14.182v-96.954Z" />
+                  <path id="Ellipse 3_3" stroke="#454545" strokeWidth="3" d="M799.5 576.977a48.512 48.512 0 0 1-32.795-14.182A48.512 48.512 0 0 1 752.5 528.5a48.512 48.512 0 0 1 14.205-34.295 48.512 48.512 0 0 1 32.795-14.182v96.954Z" />
                 </g>
               </g>
               <g id="parking" onMouseEnter={() => handleMouseEnter('parking')} onMouseLeave={handleMouseLeave}>
@@ -141,10 +144,18 @@ export default function Schema() {
               <g id="_">
                 <path fill="#fff" d="M217.5 2h188v265h-188z" />
                 <path stroke="#454545" strokeWidth="3" d="M217.5 2h188v265h-188z" />
-                <path id="Rectangle 87" stroke="#454545" strokeWidth="3" d="M348.5 210h57v57h-57z" />
-                <path id="Rectangle 89" stroke="#454545" strokeWidth="3" d="M305.5 60h100v100h-100z" />
-                <path id="Rectangle 97" stroke="#454545" strokeWidth="3" d="M355.5 160h25v25h-25z" />
-                <path id="Rectangle 86" stroke="#454545" strokeWidth="3" d="M405.5 185h25v25h-25z" />
+                <path stroke="#454545" strokeWidth="3" d="M348.5 210h57v57h-57z" />
+                <path stroke="#454545" strokeWidth="3" d="M355.5 160h25v25h-25z" />
+                <path stroke="#454545" strokeWidth="3" d="M405.5 185h25v25h-25z" />
+              </g>
+              <g id="gymnast" onMouseEnter={() => handleMouseEnter('gymnast')} onMouseLeave={handleMouseLeave}>
+                <rect x="305.5" y="59.5" width="100" height="100" fill="white" />
+                <rect x="305.5" y="59.5" width="100" height="100" stroke="#454545" strokeWidth="3" />
+                <g id="Vector">
+                  <path d="M364.778 97.1053C364.996 96.3061 365.821 95.8351 366.62 96.0534C367.372 96.2587 367.834 97.0014 367.703 97.7543L367.672 97.8955L366.395 102.57C366.373 102.653 366.343 102.734 366.307 102.811L366.247 102.925L362.747 108.987C362.701 109.067 362.649 109.142 362.591 109.21C362.525 109.303 362.451 109.391 362.368 109.474L358.271 113.571L359.332 115.41C359.438 115.592 359.503 115.794 359.525 116.002L359.533 116.16V122.204C359.533 123.032 358.862 123.704 358.033 123.704C357.254 123.704 356.613 123.109 356.54 122.348L356.533 122.204L356.533 116.561L354.245 112.598C354.227 112.572 354.209 112.545 354.191 112.517C353.781 111.884 353.633 111.129 353.749 110.409C353.846 109.808 354.126 109.231 354.59 108.767L355.966 107.391H350.549C349.72 107.391 349.049 106.72 349.049 105.891C349.049 105.112 349.644 104.471 350.404 104.398L350.549 104.391H361.937L363.552 101.593L364.778 97.1053Z" fill="#454545" />
+                  <path d="M359.711 103.767C361.368 103.767 362.711 102.423 362.711 100.767C362.711 99.1098 361.368 97.7666 359.711 97.7666C358.054 97.7666 356.711 99.1098 356.711 100.767C356.711 102.423 358.054 103.767 359.711 103.767Z" fill="#454545" />
+                  <path d="M352.952 109.517L350.655 109.517L344.876 108.022L344.734 107.993C343.98 107.873 343.243 108.344 343.048 109.099C342.841 109.901 343.323 110.719 344.125 110.927L350.091 112.47L350.214 112.496C350.298 112.51 350.382 112.517 350.466 112.517H353.055C352.633 111.568 352.598 110.488 352.952 109.517Z" fill="#454545" />
+                </g>
               </g>
               <g id="cloakroom" onMouseEnter={() => handleMouseEnter('cloakroom')} onMouseLeave={handleMouseLeave}>
                 <rect x="380.5" y="160" width="25" height="25" fill="white" />

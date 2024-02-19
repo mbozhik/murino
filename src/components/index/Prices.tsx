@@ -60,7 +60,7 @@ const priceData: Record<string, Record<string, PriceCategory>> = {
   },
 }
 
-const Prices = () => {
+export default function Prices() {
   const [selectedField, setSelectedField] = useState('20x40')
   const [selectedTime, setSelectedTime] = useState('')
   const [selectedPrice, setSelectedPrice] = useState('')
@@ -99,7 +99,7 @@ const Prices = () => {
               {category.schedule.map((item: ScheduleItem, itemIndex: number) => (
                 <div key={itemIndex} className="flex items-center text-[38px] xl:text-3xl justify-between text-custom-gray">
                   <button
-                    className={`sm:text-base w-1/2 py-1 xl:py-2 sm:px-2 duration-200 bg-custom-e4 rounded-smallest hover:bg-custom-gray hover:text-white ${selectedTime === item.time ? 'bg-custom-gray text-white' : ''}`}
+                    className={`sm:text-base w-1/2 py-1 xl:py-2 sm:px-2 duration-200 bg-custom-e4 rounded-smallest ${selectedTime === item.time ? '' : ''}`}
                     onClick={() => {
                       handleTimeSelection(item.time, item.price)
                       console.log(`Выбранный временной слот: ${item.time}, Стоимость: ${item.price} | Футбольное поле: ${selectedField}`)
@@ -118,7 +118,7 @@ const Prices = () => {
         ))}
 
         {/* <button
-          className={`!text-white  !bg-custom-green duration-200 hover:!bg-transparent hover:!ring-[3px] hover:!ring-custom-green hover:!text-custom-green ${buttonStyles.hero} ${buttonStyles.default}`}
+          className={`!text-white !bg-custom-green duration-200 hover:!bg-transparent hover:!ring-[3px] hover:!ring-custom-green hover:!text-custom-green ${buttonStyles.hero} ${buttonStyles.default}`}
           onClick={() => {
             if (selectedTime && selectedPrice) {
               alert(`Выбранный временной слот: ${selectedTime}, Стоимость: ${selectedPrice} | Футбольное поле: ${selectedField}`)
@@ -129,9 +129,11 @@ const Prices = () => {
         >
           Забронировать
         </button> */}
+
+        <Button style="hero" link="#contacts" classes="!text-white !bg-custom-green duration-200 hover:!bg-transparent hover:!ring-[3px] hover:!ring-custom-green hover:!text-custom-green">
+          Забронировать
+        </Button>
       </div>
     </section>
   )
 }
-
-export default Prices

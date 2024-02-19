@@ -1,5 +1,7 @@
 'use client'
 
+import {isMobile} from '@/lib/utils'
+
 import Image from 'next/image'
 
 import image1 from '@/assets/index/gallery/1.webp'
@@ -60,8 +62,12 @@ export default function Gallery() {
         loop={true}
         className="mySwiper relative h-[65vh] sm:h-[50vh] !mx-3 rounded-small"
       >
-        <SlideButton position="left" />
-        <SlideButton position="right" />
+        {!isMobile && (
+          <>
+            <SlideButton position="left" />
+            <SlideButton position="right" />
+          </>
+        )}
 
         {sliderImages.map((image, key) => (
           <SwiperSlide className="relative grid place-items-center" key={key}>

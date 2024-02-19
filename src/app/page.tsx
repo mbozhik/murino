@@ -6,7 +6,7 @@ import Prices from '@/components/index/Prices'
 import Contacts from '@/components/index/Contacts'
 import Footer from '@/components/ui/Footer'
 
-export default function Home() {
+export default function Index() {
   return (
     <div>
       <Hero />

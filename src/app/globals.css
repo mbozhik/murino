@@ -12,6 +12,23 @@
   @apply underline text-custom-95 underline-offset-8 decoration-4 sm:underline-offset-2;
 }
 
+.animation-click {
+  @apply text-custom-gray;
+  animation: click 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+@keyframes click {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+/* swiper customization */
+
 .swiper-scrollbar {
   @apply !bg-white/30 sm:hidden;
 }

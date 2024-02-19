@@ -30,6 +30,7 @@ const config: Config = {
         smallest: '15px',
       },
       boxShadow: {
+        btn: '0px 0px 5px rgba(0, 0, 0, 0.25)',
         base: '0px 0px 10px rgba(0, 0, 0, 0.25)',
         card: '0px 4px 20px rgba(0, 0, 0, 0.25)',
       },

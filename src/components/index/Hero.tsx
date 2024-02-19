@@ -41,7 +41,7 @@ export default function Hero() {
         <Image className="xl:w-[30%] sm:w-[70%] object-cover" src={HeroText} alt="" />
       </div>
       <div className="flex items-center justify-between mx-20 sm:flex-col sm:gap-5 sm:mx-5">
-        <Button style="hero" link="#prices" classes="sm:text-lg sm:w-full">
+        <Button style="hero" link="#contacts" classes="sm:text-lg sm:w-full">
           Забронировать
         </Button>
         <HeroSocials />
