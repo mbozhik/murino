@@ -82,7 +82,7 @@ export default function Schema() {
 
       <div className="mx-3 mt-5 shadow-card p-7 rounded-small">
         <div className="grid grid-cols-7 gap-5">
-          <div className="grid col-span-3 place-items-center border-[3px] border-custom-gray p-7 sm:p-5 rounded-small">{renderContent()}</div>
+          <div className="grid col-span-3 place-items-center border-[3px] border-custom-gray p-7 xl:p-5 rounded-small">{renderContent()}</div>
 
           <div className="grid col-span-4 overflow-hidden shadow-card rounded-small place-items-center p-7">
             <svg className="w-full" viewBox="0 0 821 646" fill="none" xmlns="http://www.w3.org/2000/svg">

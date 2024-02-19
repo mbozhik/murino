@@ -37,8 +37,8 @@ const SlideButton: React.FC<SlideButtonProps> = ({position}) => {
   const isLeft = position === 'left'
 
   return (
-    <button className={`group absolute top-[47%] z-10 bg-white rounded-small py-4 sm:py-2 ${isLeft ? 'left-5 pl-5 pr-6' : 'right-5 pr-5 pl-6'}`} onClick={handleClick} title="slide">
-      <svg className={`xl:w-12 ${isLeft ? '' : 'rotate-180'}`} xmlns="http://www.w3.org/2000/svg" width="46" height="28" viewBox="0 0 46 28" fill="none">
+    <button className={`group absolute top-[47%] z-10 bg-white rounded-small py-4 xl:py-3 sm:py-2 ${isLeft ? 'left-5 pl-5 pr-6' : 'right-5 pr-5 pl-6'}`} onClick={handleClick} title="slide">
+      <svg className={`xl:w-9 ${isLeft ? '' : 'rotate-180'}`} xmlns="http://www.w3.org/2000/svg" width="46" height="28" viewBox="0 0 46 28" fill="none">
         <path className="duration-200 group-hover:fill-custom-green fill-custom-gray" d="M24.529 25.696c0 1.547-1.68 2.508-3.013 1.725L1.935 15.916c-1.316-.774-1.316-2.676 0-3.45L21.515.963c1.334-.784 3.014.178 3.014 1.724v6.86h21.316v10.358H24.53v5.792Z" />
       </svg>
     </button>
