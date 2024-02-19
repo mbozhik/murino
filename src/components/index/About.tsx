@@ -39,10 +39,10 @@ const Card: React.FC<CardProps> = ({image, hoverImage, mobileImage, isLastCard =
 
   return (
     <div className="relative w-full h-full overflow-hidden rounded-small shadow-card" onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
-      {!isMobile && <Image className={`object-cover w-full transition-opacity duration-500 ${isHovered ? 'opacity-0' : 'opacity-100'}`} src={image} alt={altText} width={isLastCard ? '2000' : '1000'} height={1000} />}
-      {!isMobile && <Image className={`absolute inset-0 object-cover -z-10 w-full transition-opacity duration-500 ${isHovered ? 'opacity-100' : 'opacity-0'}`} src={hoverImage} alt={altText} width={isLastCard ? '2000' : '1000'} height={1000} />}
+      {!isMobile && <Image quality={100} className={`object-cover w-full transition-opacity duration-500 ${isHovered ? 'opacity-0' : 'opacity-100'}`} src={image} alt={altText} width={isLastCard ? '2000' : '1000'} height={1000} />}
+      {!isMobile && <Image quality={100} className={`absolute inset-0 object-cover -z-10 w-full transition-opacity duration-500 ${isHovered ? 'opacity-100' : 'opacity-0'}`} src={hoverImage} alt={altText} width={isLastCard ? '2000' : '1000'} height={1000} />}
 
-      {isMobile && <Image className={`object-cover w-full`} src={mobileImage} alt={altText} width={isLastCard ? '2000' : '1000'} height={1000} />}
+      {isMobile && <Image quality={100} className={`object-cover w-full`} src={mobileImage} alt={altText} width={isLastCard ? '2000' : '1000'} height={1000} />}
     </div>
   )
 }

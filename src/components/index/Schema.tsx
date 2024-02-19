@@ -38,7 +38,7 @@ export default function Schema() {
 
     return (
       <motion.div className={`flex flex-col h-full gap-5 ${classes}`} initial={{opacity: 0}} animate={{opacity: isHovering ? 1 : 0}} transition={{duration: 0.25}}>
-        <Image className={imageStyles} src={imageSrc} alt={altText} />
+        <Image loading={'eager'} quality={100} className={imageStyles} src={imageSrc} alt={altText} />
         <Button style="simple">{altText}</Button>
       </motion.div>
     )

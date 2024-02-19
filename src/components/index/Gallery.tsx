@@ -4,6 +4,13 @@ import {isMobile} from '@/lib/utils'
 
 import Image from 'next/image'
 
+import {Swiper, SwiperSlide, useSwiper} from 'swiper/react'
+import {Autoplay, Scrollbar, Pagination} from 'swiper/modules'
+
+import 'swiper/css'
+import 'swiper/css/scrollbar'
+import 'swiper/css/pagination'
+
 import image1 from '@/assets/index/gallery/1.webp'
 import image2 from '@/assets/index/gallery/2.webp'
 import image3 from '@/assets/index/gallery/3.webp'
@@ -15,13 +22,6 @@ import image8 from '@/assets/index/gallery/8.webp'
 import image9 from '@/assets/index/gallery/9.webp'
 import image10 from '@/assets/index/gallery/10.webp'
 import image11 from '@/assets/index/gallery/11.webp'
-
-import {Swiper, SwiperSlide, useSwiper} from 'swiper/react'
-import {Autoplay, Scrollbar, Pagination} from 'swiper/modules'
-
-import 'swiper/css'
-import 'swiper/css/scrollbar'
-import 'swiper/css/pagination'
 
 interface SlideButtonProps {
   position: 'left' | 'right'
@@ -71,7 +71,7 @@ export default function Gallery() {
 
         {sliderImages.map((image, key) => (
           <SwiperSlide className="relative grid place-items-center" key={key}>
-            <Image className="absolute inset-0 block object-cover s-full" src={image} width={2000} height={2000} alt="" />
+            <Image loading={'eager'} quality={100} className="absolute inset-0 block object-cover s-full" src={image} width={2000} height={2000} alt="" />
           </SwiperSlide>
         ))}
       </Swiper>
