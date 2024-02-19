@@ -60,7 +60,7 @@ const priceData: Record<string, Record<string, PriceCategory>> = {
   },
 }
 
-const Prices = () => {
+export default function Prices() {
   const [selectedField, setSelectedField] = useState('20x40')
   const [selectedTime, setSelectedTime] = useState('')
   const [selectedPrice, setSelectedPrice] = useState('')
@@ -137,5 +137,3 @@ const Prices = () => {
     </section>
   )
 }
-
-export default Prices
