@@ -1,10 +1,10 @@
 'use client'
 
-import {useState} from 'react'
+import {useState, useEffect} from 'react'
 
-import Image from 'next/image'
 import {motion} from 'framer-motion'
 
+import Image from 'next/image'
 import Button from '../ui/Button'
 
 import fieldsImage from '../../assets/index/schema/fields.webp'
@@ -74,6 +74,14 @@ export default function Schema() {
     }
   }
 
+  useEffect(() => {
+    const imagesToPreload = [fieldsImage, parkingImage, cloakroomImage, gymnastImage, toiletsImage, showersImage]
+    imagesToPreload.forEach((image) => {
+      const img = document.createElement('img')
+      img.src = image.src
+    })
+  }, [])
+
   return (
     <section id="schema" className="pt-10 mt-10 sm:hidden sm:pt-0 sm:sm:mt-14">
       <Button style="heading" classes="mx-3">
@@ -82,7 +90,7 @@ export default function Schema() {
 
       <div className="mx-3 mt-5 shadow-card p-7 rounded-small">
         <div className="grid grid-cols-7 gap-5">
-          <div className="grid col-span-3 place-items-center border-[3px] border-custom-gray p-7 xl:p-5 rounded-small">{renderContent()}</div>
+          <div className="grid col-span-3 place-items-center border-[3px] border-custom-gray p-5 rounded-small">{renderContent()}</div>
 
           <div className="grid col-span-4 overflow-hidden shadow-card rounded-small place-items-center p-7">
             <svg className="w-full" viewBox="0 0 821 646" fill="none" xmlns="http://www.w3.org/2000/svg">
