@@ -2,12 +2,13 @@
 
 import {isMobile} from '@/lib/utils'
 
-import {useState, useEffect} from 'react'
+import {useState, useRef, useEffect} from 'react'
 
 import {motion} from 'framer-motion'
 
 import Image from 'next/image'
 import Button from '../ui/Button'
+import SchemaSVG from './SchemaSVG'
 
 import fieldsImage from '../../assets/index/schema/fields.webp'
 import parkingImage from '../../assets/index/schema/parking.webp'
@@ -16,32 +17,27 @@ import gymnastImage from '../../assets/index/schema/gymnast.webp'
 import toiletsImage from '../../assets/index/schema/toilets.webp'
 import showersImage from '../../assets/index/schema/showers.webp'
 
-import SchemaSVG from './SchemaSVG'
-
 function DesktopSchema() {
   const [hoveredElement, setHoveredElement] = useState(null)
-  const [isHovering, setIsHovering] = useState(false)
-  let hoverTimeout
+  const hoveredTimeout = useRef(null)
 
   const handleMouseEnter = (elementId) => {
-    clearTimeout(hoverTimeout)
-
-    hoverTimeout = setTimeout(() => {
+    clearTimeout(hoveredTimeout.current)
+    hoveredTimeout.current = setTimeout(() => {
       setHoveredElement(elementId)
-      setIsHovering(true)
     }, 250)
   }
 
   const handleMouseLeave = () => {
-    clearTimeout(hoverTimeout)
-    setIsHovering(false)
+    clearTimeout(hoveredTimeout.current)
+    setHoveredElement(null)
   }
 
   const generateContent = (imageSrc, altText, classes = '') => {
     const imageStyles = 'w-full h-full object-cover rounded-smallest'
 
     return (
-      <motion.div className={`flex flex-col h-full gap-5 ${classes}`} initial={{opacity: 0}} animate={{opacity: isHovering ? 1 : 0}} transition={{duration: 0.25}}>
+      <motion.div className={`flex flex-col h-full gap-5 ${classes}`} initial={{opacity: 0}} animate={{opacity: hoveredElement ? 1 : 0}} transition={{duration: 0.25}}>
         <Image loading={'eager'} quality={100} className={imageStyles} src={imageSrc} alt={altText} />
         <Button style="simple">{altText}</Button>
       </motion.div>
@@ -49,7 +45,7 @@ function DesktopSchema() {
   }
 
   const renderContent = () => {
-    if (isHovering) {
+    if (hoveredElement) {
       switch (hoveredElement) {
         case 'fields':
           return generateContent(fieldsImage, '3 футбольных поля')
