@@ -2,15 +2,17 @@ interface SchemaSVGProps {
   platform: string
   onMouseEnter?: (id: string) => void
   onMouseLeave?: () => void
+  onMobileTouch?: (id: string) => void
 }
 
-export default function SchemaSVG({platform, onMouseEnter, onMouseLeave}: SchemaSVGProps) {
+export default function SchemaSVG({platform, onMouseEnter, onMouseLeave, onMobileTouch}: SchemaSVGProps) {
   const isDesktop = platform === 'desktop'
+  const isMobile = platform === 'mobile'
 
   return (
     <>
       <svg className="w-full" viewBox="0 0 821 646" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <g id="fields" {...(isDesktop && {onMouseEnter: () => onMouseEnter && onMouseEnter('fields'), onMouseLeave})}>
+        <g id="fields" {...(isDesktop && {onMouseEnter: () => onMouseEnter && onMouseEnter('fields'), onMouseLeave})} {...(isMobile && {onClick: () => onMobileTouch && onMobileTouch('fields')})}>
           <path fill="#fff" d="M430.5 2h389v642h-389z" />
           <path stroke="#454545" strokeWidth="3" d="M430.5 2h389v642h-389z" />
           <g id="Frame 199">
@@ -47,7 +49,7 @@ export default function SchemaSVG({platform, onMouseEnter, onMouseLeave}: Schema
             <path id="Ellipse 3_3" stroke="#454545" strokeWidth="3" d="M799.5 576.977a48.512 48.512 0 0 1-32.795-14.182A48.512 48.512 0 0 1 752.5 528.5a48.512 48.512 0 0 1 14.205-34.295 48.512 48.512 0 0 1 32.795-14.182v96.954Z" />
           </g>
         </g>
-        <g id="parking" {...(isDesktop && {onMouseEnter: () => onMouseEnter && onMouseEnter('parking'), onMouseLeave})}>
+        <g id="parking" {...(isDesktop && {onMouseEnter: () => onMouseEnter && onMouseEnter('parking'), onMouseLeave})} {...(isMobile && {onClick: () => onMobileTouch && onMobileTouch('parking')})}>
           <path fill="#fff" d="M0 381.5h340v201H0z" />
           <g id="Union" fill="#454545">
             <path fillRule="evenodd" d="m81.757 383.102-.137-1.156c1.025-.107 1.788-.195 2.383-.264 1.055-.121 1.583-.182 2.11-.182.53 0 1.059.061 2.118.182.596.069 1.36.157 2.388.264l-.139 1.156 2.24.998-.35-1.009-1.57-.53.052-.541 1.719.52 1.22 2.345.022 7.609.35.072c1.449.299 2.259.465 1.973 1.509l-2.323-.509.074 21.637-.626 1.846-.87.403c-4.414.064-8.14.064-12.544 0l-.87-.403-.626-1.846.064-21.648-2.356.52c-.29-1.039.519-1.207 1.95-1.505l.416-.087.021-7.598 1.21-2.345 1.72-.52.063.541-1.581.53-.35 1.009 2.25-.998Zm-1.793 30.212 2.367.573a111.27 111.27 0 0 1 7.576 0l2.367-.573-1.486-3.789c-3.12.011-6.218.011-9.338 0l-1.486 3.789Zm-.393-19.537 1.168 3.598c1.316-.626 9.444-.626 10.76 0l1.167-3.598a69.37 69.37 0 0 1-.814-.36v-.001c-1.602-.717-2.78-1.244-4.8-1.134h-1.867c-2.018-.11-3.195.417-4.797 1.134-.259.116-.53.237-.817.361Zm12.342 4.351.892-2.292v11.429l-1.125.594.233-9.731Zm-11.6 0-.89-2.292.01 11.429 1.115.594-.234-9.731Z" clipRule="evenodd" />
@@ -72,7 +74,7 @@ export default function SchemaSVG({platform, onMouseEnter, onMouseLeave}: Schema
           <path stroke="#454545" strokeWidth="3" d="M355.5 160h25v25h-25z" />
           <path stroke="#454545" strokeWidth="3" d="M405.5 185h25v25h-25z" />
         </g>
-        <g id="gymnast" {...(isDesktop && {onMouseEnter: () => onMouseEnter && onMouseEnter('gymnast'), onMouseLeave})}>
+        <g id="gymnast" {...(isDesktop && {onMouseEnter: () => onMouseEnter && onMouseEnter('gymnast'), onMouseLeave})} {...(isMobile && {onClick: () => onMobileTouch && onMobileTouch('gymnast')})}>
           <rect x="305.5" y="59.5" width="100" height="100" fill="white" />
           <rect x="305.5" y="59.5" width="100" height="100" stroke="#454545" strokeWidth="3" />
           <g id="Vector">
@@ -81,12 +83,12 @@ export default function SchemaSVG({platform, onMouseEnter, onMouseLeave}: Schema
             <path d="M352.952 109.517L350.655 109.517L344.876 108.022L344.734 107.993C343.98 107.873 343.243 108.344 343.048 109.099C342.841 109.901 343.323 110.719 344.125 110.927L350.091 112.47L350.214 112.496C350.298 112.51 350.382 112.517 350.466 112.517H353.055C352.633 111.568 352.598 110.488 352.952 109.517Z" fill="#454545" />
           </g>
         </g>
-        <g id="cloakroom" {...(isDesktop && {onMouseEnter: () => onMouseEnter && onMouseEnter('cloakroom'), onMouseLeave})}>
+        <g id="cloakroom" {...(isDesktop && {onMouseEnter: () => onMouseEnter && onMouseEnter('cloakroom'), onMouseLeave})} {...(isMobile && {onClick: () => onMobileTouch && onMobileTouch('cloakroom')})}>
           <rect x="380.5" y="160" width="25" height="25" fill="white" />
           <path stroke="#454545" strokeWidth="3" d="M380.5 160h25v25h-25z" />
           <path id="Vector" fill="#454545" d="M399.835 176.41c0 .465-.131.916-.374 1.306-.241.389-.6.721-1.051.923-.3.134-.64.208-.998.207h-8.824a2.414 2.414 0 0 1-.997-.208 2.36 2.36 0 0 1-.772-.554 2.474 2.474 0 0 1-.653-1.674 2.357 2.357 0 0 1 .218-.998 2.43 2.43 0 0 1 .677-.863l4.806-3.914-.226-.183a2.417 2.417 0 0 1-.669-2.894 2.416 2.416 0 0 1 3.724-.86l.711.58-.905 1.111-.712-.58a.982.982 0 0 0-1.608.767.97.97 0 0 0 .364.764l.907.739 5.487 4.47a2.372 2.372 0 0 1 .895 1.861Zm-1.505.376c.048-.12.072-.249.072-.376a.942.942 0 0 0-.367-.75L393 171.559l-5.034 4.102a.978.978 0 0 0-.282.354.927.927 0 0 0-.085.395c-.001.19.055.386.157.549a.948.948 0 0 0 .832.454h8.824c.123 0 .228-.018.323-.049a.92.92 0 0 0 .254-.129.987.987 0 0 0 .341-.449Z" />
         </g>
-        <g id="toilets" {...(isDesktop && {onMouseEnter: () => onMouseEnter && onMouseEnter('toilets'), onMouseLeave})}>
+        <g id="toilets" {...(isDesktop && {onMouseEnter: () => onMouseEnter && onMouseEnter('toilets'), onMouseLeave})} {...(isMobile && {onClick: () => onMobileTouch && onMobileTouch('toilets')})}>
           <rect width="103" height="28" transform="translate(304 33.5)" fill="white" />
           <g id="Frame 213">
             <path stroke="#454545" strokeWidth="3" d="M305.5 35h25v25h-25z" />
@@ -145,7 +147,7 @@ export default function SchemaSVG({platform, onMouseEnter, onMouseLeave}: Schema
             </g>
           </g>
         </g>
-        <g id="showers" {...(isDesktop && {onMouseEnter: () => onMouseEnter && onMouseEnter('showers'), onMouseLeave})}>
+        <g id="showers" {...(isDesktop && {onMouseEnter: () => onMouseEnter && onMouseEnter('showers'), onMouseLeave})} {...(isMobile && {onClick: () => onMobileTouch && onMobileTouch('showers')})}>
           <rect width="47.1631" height="268" transform="translate(216 0.5)" fill="white" />
           <g id="Frame 200_2">
             <rect x="217.498" y="1.99788" width="44.1674" height="44.1674" stroke="#454545" strokeWidth="2.99575" />

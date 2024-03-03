@@ -17,6 +17,15 @@ import gymnastImage from '../../assets/index/schema/gymnast.webp'
 import toiletsImage from '../../assets/index/schema/toilets.webp'
 import showersImage from '../../assets/index/schema/showers.webp'
 
+const contentData = {
+  fields: {image: fieldsImage, text: '3 футбольных поля'},
+  parking: {image: parkingImage, text: '300 парковочных мест'},
+  cloakroom: {image: cloakroomImage, text: 'Какая-то раздевалка'},
+  gymnast: {image: gymnastImage, text: 'Штука для танцев'},
+  toilets: {image: toiletsImage, text: 'Наши туалеты'},
+  showers: {image: showersImage, text: 'Душевые + раздевалки'},
+}
+
 function DesktopSchema() {
   const [hoveredElement, setHoveredElement] = useState(null)
   const hoveredTimeout = useRef(null)
@@ -48,17 +57,17 @@ function DesktopSchema() {
     if (hoveredElement) {
       switch (hoveredElement) {
         case 'fields':
-          return generateContent(fieldsImage, '3 футбольных поля')
+          return generateContent(contentData.fields.image, contentData.fields.text)
         case 'parking':
-          return generateContent(parkingImage, '300 парковочных мест')
+          return generateContent(contentData.parking.image, contentData.parking.text)
         case 'cloakroom':
-          return generateContent(cloakroomImage, 'Какая-то раздевалка')
+          return generateContent(contentData.cloakroom.image, contentData.cloakroom.text)
         case 'gymnast':
-          return generateContent(gymnastImage, 'Штука для танцев')
+          return generateContent(contentData.gymnast.image, contentData.gymnast.text)
         case 'toilets':
-          return generateContent(toiletsImage, 'Наши туалеты')
+          return generateContent(contentData.toilets.image, contentData.toilets.text)
         case 'showers':
-          return generateContent(showersImage, 'Душевые + раздевалки')
+          return generateContent(contentData.showers.image, contentData.showers.text)
         default:
           return null
       }
@@ -94,10 +103,40 @@ function DesktopSchema() {
 }
 
 function MobileSchema() {
+  const [clickedElement, setClickedElement] = useState(null)
+
+  const generateContent = (imageSrc, altText, classes = '') => {
+    const imageStyles = 'w-full h-full object-cover rounded-smallest'
+
+    return (
+      <div className="absolute inset-0 space-y-3 p-5">
+        <Image loading={'eager'} quality={100} className={imageStyles} src={imageSrc} alt={altText} />
+        <h1 className="text-center">{altText}</h1>
+      </div>
+    )
+  }
+
+  const renderContent = () => {
+    if (clickedElement) {
+      const {image, text} = contentData[clickedElement] || {}
+      if (!image || !text) return null
+      return generateContent(image, text)
+    }
+    return null
+  }
+
+  const handleMobileTouch = (elementId) => {
+    setClickedElement(elementId)
+    // setTimeout(() => {
+    //   setClickedElement(null);
+    // }, 3000);
+  }
+
   return (
     <section id="schema" data-section="mobile" className="pt-10 mt-10 sm:pt-0 sm:sm:mt-14">
-      <div className="mx-3 mt-5 shadow-card p-4 rounded-small">
-        <SchemaSVG platform="mobile" />
+      <div className="relative mx-3 mt-5 shadow-card p-4 rounded-small">
+        {renderContent() || <SchemaSVG platform="mobile" onMobileTouch={handleMobileTouch} />}
+        <div className="mx-3 mt-5 shadow-card p-4 rounded-small">{renderContent()}</div>
       </div>
     </section>
   )
@@ -112,5 +151,5 @@ export default function Schema() {
     })
   }, [])
 
-  return <>{!isMobile ? <DesktopSchema /> : <MobileSchema />}</>
+  return !isMobile ? <DesktopSchema /> : <MobileSchema />
 }
