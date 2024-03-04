@@ -10,6 +10,8 @@ import Image from 'next/image'
 import Button from '../ui/Button'
 import SchemaSVG from './SchemaSVG'
 
+import crossIcon from '../../assets/index/cross.svg'
+
 import fieldsImage from '../../assets/index/schema/fields.webp'
 import parkingImage from '../../assets/index/schema/parking.webp'
 import cloakroomImage from '../../assets/index/schema/cloakroom.webp'
@@ -104,14 +106,18 @@ function DesktopSchema() {
 
 function MobileSchema() {
   const [clickedElement, setClickedElement] = useState(null)
+  const [showIntroText, setShowIntroText] = useState(true)
 
-  const generateContent = (imageSrc, altText, classes = '') => {
+  const generateContent = (imageSrc, altText) => {
     const imageStyles = 'w-full h-full object-cover rounded-smallest'
 
     return (
-      <div className="absolute inset-0 space-y-3 p-5">
+      <div className="rounded-small">
+        <button onClick={() => setClickedElement(null)} className="absolute top-0 right-0 p-2 m-2 bg-custom-e4 rounded-small">
+          <Image quality={100} src={crossIcon} className="s-5" alt="" />
+        </button>
         <Image loading={'eager'} quality={100} className={imageStyles} src={imageSrc} alt={altText} />
-        <h1 className="text-center">{altText}</h1>
+        <h1 className="mt-3 text-center">{altText}</h1>
       </div>
     )
   }
@@ -127,16 +133,26 @@ function MobileSchema() {
 
   const handleMobileTouch = (elementId) => {
     setClickedElement(elementId)
-    // setTimeout(() => {
-    //   setClickedElement(null);
-    // }, 3000);
+
+    setTimeout(() => {
+      setShowIntroText(false)
+    }, 1500)
   }
 
   return (
     <section id="schema" data-section="mobile" className="pt-10 mt-10 sm:pt-0 sm:sm:mt-14">
-      <div className="relative mx-3 mt-5 shadow-card p-4 rounded-small">
-        {renderContent() || <SchemaSVG platform="mobile" onMobileTouch={handleMobileTouch} />}
-        <div className="mx-3 mt-5 shadow-card p-4 rounded-small">{renderContent()}</div>
+      {showIntroText && (
+        <h1 className="mt-3 text-sm leading-tight text-center text-custom-95 w-[60%] mx-auto">
+          Нажмите на&nbsp;одну из&nbsp;секций <br /> шатра на&nbsp;схеме
+        </h1>
+      )}
+
+      <div className="relative p-4 mx-3 mt-5 shadow-card rounded-small">
+        {renderContent() || (
+          <div>
+            <SchemaSVG platform="mobile" onMobileTouch={handleMobileTouch} />
+          </div>
+        )}
       </div>
     </section>
   )
