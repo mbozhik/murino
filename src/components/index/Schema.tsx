@@ -28,6 +28,18 @@ const contentData = {
   showers: {image: showersImage, text: 'Душевые + раздевалки'},
 }
 
+export default function Schema() {
+  useEffect(() => {
+    const imagesToPreload = [fieldsImage, parkingImage, cloakroomImage, gymnastImage, toiletsImage, showersImage]
+    imagesToPreload.forEach((image) => {
+      const img = document.createElement('img')
+      img.src = image.src
+    })
+  }, [])
+
+  return !isMobile ? <DesktopSchema /> : <MobileSchema />
+}
+
 function DesktopSchema() {
   const [hoveredElement, setHoveredElement] = useState(null)
   const hoveredTimeout = useRef(null)
@@ -136,11 +148,11 @@ function MobileSchema() {
 
     setTimeout(() => {
       setShowIntroText(false)
-    }, 1500)
+    }, 2500)
   }
 
   return (
-    <section id="schema" data-section="mobile" className="pt-10 mt-10 sm:pt-0 sm:sm:mt-14">
+    <section id="schema" data-section="mobile" className="pt-10 mt-10 sm:pt-0 sm:mt-12">
       {showIntroText && (
         <h1 className="mt-3 text-sm leading-tight text-center text-custom-95 w-[60%] mx-auto">
           Нажмите на&nbsp;одну из&nbsp;секций <br /> шатра на&nbsp;схеме
@@ -156,16 +168,4 @@ function MobileSchema() {
       </div>
     </section>
   )
-}
-
-export default function Schema() {
-  useEffect(() => {
-    const imagesToPreload = [fieldsImage, parkingImage, cloakroomImage, gymnastImage, toiletsImage, showersImage]
-    imagesToPreload.forEach((image) => {
-      const img = document.createElement('img')
-      img.src = image.src
-    })
-  }, [])
-
-  return !isMobile ? <DesktopSchema /> : <MobileSchema />
 }
