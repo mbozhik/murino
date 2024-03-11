@@ -2,6 +2,8 @@
 
 import {isMobile} from '@/lib/utils'
 
+// const isMobile = true
+
 import {useState, useRef, useEffect} from 'react'
 
 import {motion} from 'framer-motion'
@@ -14,23 +16,22 @@ import crossIcon from '../../assets/index/cross.svg'
 
 import fieldsImage from '../../assets/index/schema/fields.webp'
 import parkingImage from '../../assets/index/schema/parking.webp'
-import cloakroomImage from '../../assets/index/schema/cloakroom.webp'
 import gymnastImage from '../../assets/index/schema/gymnast.webp'
 import toiletsImage from '../../assets/index/schema/toilets.webp'
 import showersImage from '../../assets/index/schema/showers.webp'
 
 const contentData = {
-  fields: {image: fieldsImage, text: '3 футбольных поля'},
-  parking: {image: parkingImage, text: '300 парковочных мест'},
-  cloakroom: {image: cloakroomImage, text: 'Какая-то раздевалка'},
-  gymnast: {image: gymnastImage, text: 'Штука для танцев'},
-  toilets: {image: toiletsImage, text: 'Наши туалеты'},
-  showers: {image: showersImage, text: 'Душевые + раздевалки'},
+  fields: {image: fieldsImage, text: 'Поля с высококачественным новым искусственным покрытием <br /> <span class="text-neutral-400">(поле 40x70 и 3 поля 20х40)</span>'},
+  parking: {image: parkingImage, text: 'Парковка на 300 машиномест'},
+  cloakroom: {image: showersImage, text: 'Дополнительная раздевалка'},
+  gymnast: {image: gymnastImage, text: 'Гимнастический зал <span class="text-neutral-400">(скоро будет готов)</span>'},
+  toilets: {image: toiletsImage, text: 'Туалеты'},
+  showers: {image: showersImage, text: '6 раздевалок с душевыми и теплым полом'},
 }
 
 export default function Schema() {
   useEffect(() => {
-    const imagesToPreload = [fieldsImage, parkingImage, cloakroomImage, gymnastImage, toiletsImage, showersImage]
+    const imagesToPreload = [fieldsImage, parkingImage, gymnastImage, toiletsImage, showersImage]
     imagesToPreload.forEach((image) => {
       const img = document.createElement('img')
       img.src = image.src
@@ -62,7 +63,9 @@ function DesktopSchema() {
     return (
       <motion.div className={`flex flex-col h-full gap-5 ${classes}`} initial={{opacity: 0}} animate={{opacity: hoveredElement ? 1 : 0}} transition={{duration: 0.25}}>
         <Image loading={'eager'} quality={100} className={imageStyles} src={imageSrc} alt={altText} />
-        <Button style="simple">{altText}</Button>
+        <Button style="simple">
+          <span dangerouslySetInnerHTML={{__html: altText}}></span>
+        </Button>
       </motion.div>
     )
   }
@@ -128,8 +131,8 @@ function MobileSchema() {
         <button onClick={() => setClickedElement(null)} className="absolute top-0 right-0 p-2 m-2 bg-custom-e4 rounded-small" title="button">
           <Image quality={100} src={crossIcon} className="s-5" alt="" />
         </button>
-        <Image loading={'eager'} quality={100} className={imageStyles} src={imageSrc} alt={altText} />
-        <h1 className="mt-3 text-center">{altText}</h1>
+        <Image quality={100} loading={'eager'} className={imageStyles} src={imageSrc} alt={altText} />
+        <h1 className="mt-3 text-center" dangerouslySetInnerHTML={{__html: altText}}></h1>
       </div>
     )
   }
