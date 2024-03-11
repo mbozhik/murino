@@ -55,30 +55,30 @@ export default function SchemaSVG({platform, onMouseEnter, onMouseLeave, onMobil
           <path fill="white" d="M430.5 2h389v642h-389z" />
           <path stroke="#454545" strokeWidth="3" d="M430.5 2h389v642h-389z" />
           <g id="Frame 199">
-            <mask id="path-2-inside-1_3482_3185" fill={colorArea}>
+            <mask id="path-2-inside-1_3482_3185" fill={colorArea} className="duration-300 hover:fill-custom-green-hov">
               <rect width="352" height="175" x="449" y="30.5" rx="2" />
             </mask>
-            <rect width="352" height="175" x="449" y="30.5" fill={colorArea} stroke="#111" strokeWidth="6" mask="url(#path-2-inside-1_3482_3185)" rx="2" />
+            <rect width="352" height="175" x="449" y="30.5" fill={colorArea} className="duration-300 hover:fill-custom-green-hov" stroke="#111" strokeWidth="6" mask="url(#path-2-inside-1_3482_3185)" rx="2" />
             <path id="Rectangle 85" fill="#454545" d="M624 30.5h3v175h-3z" />
             <circle id="Ellipse 1" cx="625" cy="118.5" r="48.5" stroke="#454545" strokeWidth="3" />
             <path id="Ellipse 2" stroke="#454545" strokeWidth="3" d="M450.5 70.023a48.498 48.498 0 0 1 47 48.477 48.512 48.512 0 0 1-14.205 34.295 48.512 48.512 0 0 1-32.795 14.182V70.023Z" />
             <path id="Ellipse 3" stroke="#454545" strokeWidth="3" d="M799.5 166.977a48.512 48.512 0 0 1-32.795-14.182A48.512 48.512 0 0 1 752.5 118.5a48.487 48.487 0 0 1 14.205-34.295A48.51 48.51 0 0 1 799.5 70.023v96.954Z" />
           </g>
           <g id="Frame 200">
-            <mask id="path-7-inside-2_3482_3185" fill={colorArea}>
+            <mask id="path-7-inside-2_3482_3185" fill={colorArea} className="duration-300 hover:fill-custom-green-hov">
               <rect width="352" height="175" x="449" y="235.5" rx="2" />
             </mask>
-            <rect width="352" height="175" x="449" y="235.5" fill={colorArea} stroke="#111" strokeWidth="6" mask="url(#path-7-inside-2_3482_3185)" rx="2" />
+            <rect width="352" height="175" x="449" y="235.5" fill={colorArea} className="duration-300 hover:fill-custom-green-hov" stroke="#111" strokeWidth="6" mask="url(#path-7-inside-2_3482_3185)" rx="2" />
             <path id="Rectangle 85_2" fill="#454545" d="M624 235.5h3v175h-3z" />
             <circle id="Ellipse 1_2" cx="625" cy="323.5" r="48.5" stroke="#454545" strokeWidth="3" />
             <path id="Ellipse 2_2" stroke="#454545" strokeWidth="3" d="M450.5 275.023a48.512 48.512 0 0 1 32.795 14.182A48.512 48.512 0 0 1 497.5 323.5a48.512 48.512 0 0 1-14.205 34.295 48.512 48.512 0 0 1-32.795 14.182v-96.954Z" />
             <path id="Ellipse 3_2" stroke="#454545" strokeWidth="3" d="M799.5 371.977a48.512 48.512 0 0 1-32.795-14.182A48.512 48.512 0 0 1 752.5 323.5a48.512 48.512 0 0 1 14.205-34.295 48.512 48.512 0 0 1 32.795-14.182v96.954Z" />
           </g>
           <g id="Frame 201">
-            <mask id="path-12-inside-3_3482_3185" fill={colorArea}>
+            <mask id="path-12-inside-3_3482_3185" fill={colorArea} className="duration-300 hover:fill-custom-green-hov">
               <rect width="352" height="175" x="449" y="440.5" rx="2" />
             </mask>
-            <rect width="352" height="175" x="449" y="440.5" fill={colorArea} stroke="#111" strokeWidth="6" mask="url(#path-12-inside-3_3482_3185)" rx="2" />
+            <rect width="352" height="175" x="449" y="440.5" fill={colorArea} className="duration-300 hover:fill-custom-green-hov" stroke="#111" strokeWidth="6" mask="url(#path-12-inside-3_3482_3185)" rx="2" />
             <path id="Rectangle 85_3" fill="#454545" d="M624 440.5h3v175h-3z" />
             <circle id="Ellipse 1_3" cx="625" cy="528.5" r="48.5" stroke="#454545" strokeWidth="3" />
             <path id="Ellipse 2_3" stroke="#454545" strokeWidth="3" d="M450.5 480.023a48.512 48.512 0 0 1 32.795 14.182A48.512 48.512 0 0 1 497.5 528.5a48.512 48.512 0 0 1-14.205 34.295 48.512 48.512 0 0 1-32.795 14.182v-96.954Z" />
@@ -86,7 +86,7 @@ export default function SchemaSVG({platform, onMouseEnter, onMouseLeave, onMobil
           </g>
         </g>
         <g id="parking" {...(isDesktop && {onMouseEnter: () => onMouseEnter && onMouseEnter('parking'), onMouseLeave})} {...(isMobile && {onClick: () => onMobileTouch && onMobileTouch('parking')})}>
-          <rect y="381" width="340" height="201" rx="10" fill={colorArea} />
+          <rect y="381" width="340" height="201" rx="10" fill={colorArea} className="duration-300 hover:fill-custom-green-hov" />
           <g id="Union" fill="#454545">
             <path fillRule="evenodd" d="m81.757 383.102-.137-1.156c1.025-.107 1.788-.195 2.383-.264 1.055-.121 1.583-.182 2.11-.182.53 0 1.059.061 2.118.182.596.069 1.36.157 2.388.264l-.139 1.156 2.24.998-.35-1.009-1.57-.53.052-.541 1.719.52 1.22 2.345.022 7.609.35.072c1.449.299 2.259.465 1.973 1.509l-2.323-.509.074 21.637-.626 1.846-.87.403c-4.414.064-8.14.064-12.544 0l-.87-.403-.626-1.846.064-21.648-2.356.52c-.29-1.039.519-1.207 1.95-1.505l.416-.087.021-7.598 1.21-2.345 1.72-.52.063.541-1.581.53-.35 1.009 2.25-.998Zm-1.793 30.212 2.367.573a111.27 111.27 0 0 1 7.576 0l2.367-.573-1.486-3.789c-3.12.011-6.218.011-9.338 0l-1.486 3.789Zm-.393-19.537 1.168 3.598c1.316-.626 9.444-.626 10.76 0l1.167-3.598a69.37 69.37 0 0 1-.814-.36v-.001c-1.602-.717-2.78-1.244-4.8-1.134h-1.867c-2.018-.11-3.195.417-4.797 1.134-.259.116-.53.237-.817.361Zm12.342 4.351.892-2.292v11.429l-1.125.594.233-9.731Zm-11.6 0-.89-2.292.01 11.429 1.115.594-.234-9.731Z" clipRule="evenodd" />
             <path d="M39 381.5h-3v42H0v3h36v40h3v-40h30v40h3v-40h30v40h3v-40h30v40h3v-40h30v40h3v-40h30v40h3v-40h30v40h3v-40h30v40h3v-40h30v40h3v-40h37v-3h-37v-42h-3v42h-30v-42h-3v42h-30v-42h-3v42h-30v-42h-3v42h-30v-42h-3v42h-30v-42h-3v42h-30v-42h-3v42H72v-42h-3v42H39v-42Z" />
@@ -116,7 +116,7 @@ export default function SchemaSVG({platform, onMouseEnter, onMouseLeave, onMobil
         </g>
         <g id="touch_buttons" className="invisible sm:visible">
           <g id="toilets_2" {...(isMobile && {onClick: () => onMobileTouch && onMobileTouch('toilets')})}>
-            <rect x="39.75" y="7.75" width="66.5" height="66.5" fill={colorArea}></rect>
+            <rect x="39.75" y="7.75" width="66.5" height="66.5" fill={colorArea} className="duration-300 hover:fill-custom-green-hov"></rect>
             <rect x="39.75" y="7.75" width="66.5" height="66.5" stroke="#454545" strokeWidth="3.5"></rect>
             <g id="Group_13">
               <path id="Vector_31" d="M61.2496 35.4502H60.6967C57.8588 35.4502 55.5 37.7721 55.5 40.6469V45.7699C55.5 46.5808 56.1634 47.2442 56.9742 47.2442H58.1905V53.6572C58.1905 54.7997 59.1119 55.7211 60.2544 55.7211H61.655C62.7975 55.7211 63.7189 54.7997 63.7189 53.6572V47.2442H64.9352C65.746 47.2442 66.4094 46.5808 66.4094 45.7699V40.6469C66.4463 37.7721 64.1244 35.4502 61.2496 35.4502Z" fill="#454545"></path>
@@ -127,13 +127,13 @@ export default function SchemaSVG({platform, onMouseEnter, onMouseLeave, onMobil
             </g>
           </g>
           <g id="showers_2" {...(isMobile && {onClick: () => onMobileTouch && onMobileTouch('showers')})}>
-            <rect x="39.75" y="101.083" width="66.5" height="66.5" fill={colorArea}></rect>
+            <rect x="39.75" y="101.083" width="66.5" height="66.5" fill={colorArea} className="duration-300 hover:fill-custom-green-hov"></rect>
             <rect x="39.75" y="101.083" width="66.5" height="66.5" stroke="#454545" strokeWidth="3.5"></rect>
             <path id="Vector_35" d="M74.6068 141.588C74.6068 142.449 74.364 143.286 73.914 144.01C73.4657 144.733 72.801 145.348 71.9627 145.723C71.4062 145.971 70.7754 146.109 70.1124 146.107H53.7411C53.0785 146.109 52.4474 145.971 51.8908 145.721C51.3327 145.473 50.8504 145.116 50.4591 144.692C49.6757 143.843 49.2488 142.735 49.2471 141.588C49.2454 140.967 49.3746 140.334 49.6509 139.736C49.9256 139.14 50.3509 138.587 50.9074 138.135L59.8234 130.873L59.4052 130.533C58.8592 130.09 58.4411 129.538 58.1647 128.941C57.8867 128.341 57.75 127.696 57.75 127.052C57.75 126.408 57.8863 125.763 58.1631 125.164C58.4377 124.565 58.8575 124.011 59.4052 123.566C60.2276 122.896 61.2375 122.559 62.239 122.559C63.2421 122.559 64.2503 122.898 65.0727 123.568L66.3912 124.644L64.7129 126.707L63.3927 125.63C63.0543 125.356 62.65 125.219 62.239 125.219C61.8259 125.219 61.4204 125.356 61.0819 125.63C60.8534 125.818 60.6885 126.037 60.577 126.28C60.4654 126.521 60.4088 126.787 60.4088 127.053C60.4088 127.317 60.4654 127.581 60.577 127.822C60.6885 128.063 60.8534 128.283 61.084 128.471L62.7674 129.842L72.9465 138.135C73.503 138.587 73.9266 139.14 74.203 139.736C74.4794 140.334 74.6068 140.967 74.6068 141.588ZM71.8159 142.286C71.9044 142.063 71.9488 141.823 71.9488 141.587C71.9488 141.334 71.8972 141.085 71.7911 140.855C71.6829 140.622 71.5219 140.405 71.2682 140.197L61.927 132.588L52.5858 140.197C52.3324 140.405 52.171 140.623 52.0628 140.855C51.9563 141.086 51.9051 141.334 51.9051 141.588C51.9034 141.94 52.0078 142.304 52.1974 142.606C52.3853 142.911 52.6495 143.148 52.9737 143.294C53.1901 143.389 53.4379 143.448 53.7411 143.448H70.1124C70.3393 143.448 70.5343 143.415 70.7112 143.358C70.8865 143.301 71.0426 143.219 71.1826 143.118C71.4649 142.916 71.6863 142.621 71.8159 142.286Z" fill="#454545"></path>
             <path id="Vector_36" fillRule="evenodd" clipRule="evenodd" d="M88.0131 146.293C92.8248 146.293 96.7528 142.562 96.7528 137.778C96.7528 134.334 90.4681 126.01 88.2095 122.374C85.8527 126.392 79.2734 134.334 79.2734 137.778C79.2734 142.562 83.2014 146.293 88.0131 146.293Z" fill="#454545"></path>
           </g>
           <g id="gymnast_2" {...(isMobile && {onClick: () => onMobileTouch && onMobileTouch('gymnast')})}>
-            <rect x="39.75" y="194.417" width="66.5" height="66.5" fill={colorArea}></rect>
+            <rect x="39.75" y="194.417" width="66.5" height="66.5" fill={colorArea} className="duration-300 hover:fill-custom-green-hov"></rect>
             <rect x="39.75" y="194.417" width="66.5" height="66.5" stroke="#454545" strokeWidth="3.5"></rect>
             <g id="Frame 60">
               <g id="Vector_37">
@@ -145,7 +145,7 @@ export default function SchemaSVG({platform, onMouseEnter, onMouseLeave, onMobil
           </g>
         </g>
         <g id="gymnast" {...(isDesktop && {onMouseEnter: () => onMouseEnter && onMouseEnter('gymnast'), onMouseLeave})} {...(isMobile && {onClick: () => onMobileTouch && onMobileTouch('gymnast')})}>
-          <rect x="305.5" y="59.5" width="100" height="100" fill={colorArea} />
+          <rect x="305.5" y="59.5" width="100" height="100" fill={colorArea} className="duration-300 hover:fill-custom-green-hov" />
           <rect x="305.5" y="59.5" width="100" height="100" stroke="#454545" strokeWidth="3" />
           <g id="Vector">
             <path d="M364.778 97.1053C364.996 96.3061 365.821 95.8351 366.62 96.0534C367.372 96.2587 367.834 97.0014 367.703 97.7543L367.672 97.8955L366.395 102.57C366.373 102.653 366.343 102.734 366.307 102.811L366.247 102.925L362.747 108.987C362.701 109.067 362.649 109.142 362.591 109.21C362.525 109.303 362.451 109.391 362.368 109.474L358.271 113.571L359.332 115.41C359.438 115.592 359.503 115.794 359.525 116.002L359.533 116.16V122.204C359.533 123.032 358.862 123.704 358.033 123.704C357.254 123.704 356.613 123.109 356.54 122.348L356.533 122.204L356.533 116.561L354.245 112.598C354.227 112.572 354.209 112.545 354.191 112.517C353.781 111.884 353.633 111.129 353.749 110.409C353.846 109.808 354.126 109.231 354.59 108.767L355.966 107.391H350.549C349.72 107.391 349.049 106.72 349.049 105.891C349.049 105.112 349.644 104.471 350.404 104.398L350.549 104.391H361.937L363.552 101.593L364.778 97.1053Z" fill="#454545" />
@@ -154,12 +154,12 @@ export default function SchemaSVG({platform, onMouseEnter, onMouseLeave, onMobil
           </g>
         </g>
         <g id="cloakroom" {...(isDesktop && {onMouseEnter: () => onMouseEnter && onMouseEnter('cloakroom'), onMouseLeave})} {...(isMobile && {onClick: () => onMobileTouch && onMobileTouch('cloakroom')})}>
-          <rect x="380.5" y="160" width="25" height="25" fill={colorArea} />
+          <rect x="380.5" y="160" width="25" height="25" fill={colorArea} className="duration-300 hover:fill-custom-green-hov" />
           <path stroke="#454545" strokeWidth="3" d="M380.5 160h25v25h-25z" />
           <path className="sm:invisible" id="Vector" fill="#454545" d="M399.835 176.41c0 .465-.131.916-.374 1.306-.241.389-.6.721-1.051.923-.3.134-.64.208-.998.207h-8.824a2.414 2.414 0 0 1-.997-.208 2.36 2.36 0 0 1-.772-.554 2.474 2.474 0 0 1-.653-1.674 2.357 2.357 0 0 1 .218-.998 2.43 2.43 0 0 1 .677-.863l4.806-3.914-.226-.183a2.417 2.417 0 0 1-.669-2.894 2.416 2.416 0 0 1 3.724-.86l.711.58-.905 1.111-.712-.58a.982.982 0 0 0-1.608.767.97.97 0 0 0 .364.764l.907.739 5.487 4.47a2.372 2.372 0 0 1 .895 1.861Zm-1.505.376c.048-.12.072-.249.072-.376a.942.942 0 0 0-.367-.75L393 171.559l-5.034 4.102a.978.978 0 0 0-.282.354.927.927 0 0 0-.085.395c-.001.19.055.386.157.549a.948.948 0 0 0 .832.454h8.824c.123 0 .228-.018.323-.049a.92.92 0 0 0 .254-.129.987.987 0 0 0 .341-.449Z" />
         </g>
         <g id="toilets" {...(isDesktop && {onMouseEnter: () => onMouseEnter && onMouseEnter('toilets'), onMouseLeave})} {...(isMobile && {onClick: () => onMobileTouch && onMobileTouch('toilets')})}>
-          <rect width="103" height="28" transform="translate(304 33.5)" fill={colorArea} />
+          <rect width="103" height="28" transform="translate(304 33.5)" fill={colorArea} className="duration-300 hover:fill-custom-green-hov" />
           <g id="Frame 213">
             <path stroke="#454545" strokeWidth="3" d="M305.5 35h25v25h-25z" />
             <g id="Group">
@@ -218,7 +218,7 @@ export default function SchemaSVG({platform, onMouseEnter, onMouseLeave, onMobil
           </g>
         </g>
         <g id="showers" {...(isDesktop && {onMouseEnter: () => onMouseEnter && onMouseEnter('showers'), onMouseLeave})} {...(isMobile && {onClick: () => onMobileTouch && onMobileTouch('showers')})}>
-          <rect width="47.1631" height="268" transform="translate(216 0.5)" fill={colorArea} />
+          <rect width="47.1631" height="268" transform="translate(216 0.5)" fill={colorArea} className="duration-300 hover:fill-custom-green-hov" />
           <g id="Frame 200_2">
             <rect x="217.498" y="1.99788" width="44.1674" height="44.1674" stroke="#454545" strokeWidth="2.99575" />
             <path id="Vector_18" fillRule="evenodd" clipRule="evenodd" d="M229.628 31.5836C232.646 31.5836 235.11 29.243 235.11 26.2422C235.11 24.0816 231.168 18.8602 229.751 16.5796C228.273 19.1003 224.146 24.0816 224.146 26.2422C224.146 29.243 226.609 31.5836 229.628 31.5836Z" fill="#454545" />

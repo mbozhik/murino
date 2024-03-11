@@ -125,7 +125,7 @@ function MobileSchema() {
 
     return (
       <div className="rounded-small">
-        <button onClick={() => setClickedElement(null)} className="absolute top-0 right-0 p-2 m-2 bg-custom-e4 rounded-small">
+        <button onClick={() => setClickedElement(null)} className="absolute top-0 right-0 p-2 m-2 bg-custom-e4 rounded-small" title="button">
           <Image quality={100} src={crossIcon} className="s-5" alt="" />
         </button>
         <Image loading={'eager'} quality={100} className={imageStyles} src={imageSrc} alt={altText} />

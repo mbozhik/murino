@@ -18,6 +18,7 @@ const config: Config = {
       colors: {
         custom: {
           green: '#387A22',
+          'green-hov': '#E8FDE0',
           gray: '#454545',
           95: '#959595',
           e4: '#E4E4E4',
