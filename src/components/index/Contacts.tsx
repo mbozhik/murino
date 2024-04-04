@@ -1,7 +1,7 @@
 'use client'
 
 import {useState, useEffect, useRef, forwardRef} from 'react'
-import {isMobile} from '@/lib/utils'
+import {isMobile} from '@bozzhik/is-mobile'
 
 import Link from 'next/link'
 import Image from 'next/image'

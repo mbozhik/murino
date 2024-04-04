@@ -1,7 +1,7 @@
 'use client'
 
 import {useState} from 'react'
-import {isMobile} from '@/lib/utils'
+import {isMobile} from '@bozzhik/is-mobile'
 
 import Image from 'next/image'
 import Button from '../ui/Button'

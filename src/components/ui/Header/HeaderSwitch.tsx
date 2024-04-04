@@ -1,7 +1,7 @@
 'use client'
 
 import {useState, useEffect} from 'react'
-import {isMobile} from '@/lib/utils'
+import {isMobile} from '@bozzhik/is-mobile'
 
 import Link from 'next/link'
 

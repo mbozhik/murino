@@ -1,6 +1,6 @@
 'use client'
 
-import {isMobile} from '@/lib/utils'
+import {isMobile} from '@bozzhik/is-mobile'
 
 // const isMobile = true
 
