@@ -13,30 +13,30 @@ const priceData = {
     workdays: {
       title: 'БУДНИЕ ДНИ',
       schedule: [
-        {time: '07:00 - 14:00', price: '3000'},
-        {time: '14:00 - 17:00', price: '4300'},
-        {time: '17:00 - 23:00', price: '5500'},
-        {time: '23:00 - 07:00', price: '3500'},
+        {time: '07:00 - 14:00', price: '3500'},
+        {time: '14:00 - 17:00', price: '5000'},
+        {time: '17:00 - 23:00', price: '6500'},
+        {time: '23:00 - 07:00', price: '4500'},
       ],
     },
     weekends: {
       title: 'ВЫХОДНЫЕ ДНИ',
-      schedule: [{time: 'Весь день', price: '4000'}],
+      schedule: [{time: 'Весь день', price: '5000'}],
     },
   },
   '40x70': {
     workdays: {
       title: 'БУДНИЕ ДНИ',
       schedule: [
-        {time: '07:00 - 14:00', price: '9000'},
-        {time: '14:00 - 17:00', price: '12900'},
-        {time: '17:00 - 23:00', price: '16500'},
-        {time: '23:00 - 07:00', price: '10500'},
+        {time: '07:00 - 14:00', price: '10500'},
+        {time: '14:00 - 17:00', price: '15000'},
+        {time: '17:00 - 23:00', price: '19500'},
+        {time: '23:00 - 07:00', price: '13500'},
       ],
     },
     weekends: {
       title: 'ВЫХОДНЫЕ ДНИ',
-      schedule: [{time: 'Весь день', price: '12000'}],
+      schedule: [{time: 'Весь день', price: '15000'}],
     },
   },
 }
