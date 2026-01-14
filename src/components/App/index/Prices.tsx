@@ -16,7 +16,7 @@ const priceData = {
         {time: '07:00 - 14:00', price: '3500'},
         {time: '14:00 - 17:00', price: '5000'},
         {time: '17:00 - 23:00', price: '6500'},
-        {time: '23:00 - 07:00', price: '4500'},
+        {time: '23:00 - 07:00', price: '5000'},
       ],
     },
     weekends: {
@@ -31,7 +31,7 @@ const priceData = {
         {time: '07:00 - 14:00', price: '10500'},
         {time: '14:00 - 17:00', price: '15000'},
         {time: '17:00 - 23:00', price: '19500'},
-        {time: '23:00 - 07:00', price: '13500'},
+        {time: '23:00 - 07:00', price: '15000'},
       ],
     },
     weekends: {
