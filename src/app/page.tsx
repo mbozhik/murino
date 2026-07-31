@@ -1,3 +1,4 @@
+import type {Metadata} from 'next'
 import {cn} from '@/lib/utils'
 
 import Hero from '##/index/Hero'
@@ -7,6 +8,12 @@ import Schema from '##/index/Schema'
 import Prices from '##/index/Prices'
 import Contacts from '##/index/Contacts'
 import Footer from '##/index/Footer'
+
+export const metadata: Metadata = {
+  alternates: {
+    canonical: '/',
+  },
+}
 
 export default function Index() {
   return (
