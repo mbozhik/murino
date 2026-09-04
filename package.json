@@ -7,7 +7,10 @@
     "dev:host": "explorer http://192.168.0.16:2000 & next dev -p 2000 -H 192.168.0.16",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "deploy": "bun scripts/deploy.mjs",
+    "deploy:status": "bun scripts/deploy.mjs status",
+    "deploy:rollback": "bun scripts/deploy.mjs rollback"
   },
   "dependencies": {
     "@bozzhik/is-mobile": "^0.1.1",
