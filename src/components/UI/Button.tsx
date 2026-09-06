@@ -4,6 +4,8 @@ import Link from 'next/link'
 type Props = {
   variant: 'default' | 'hero'
   href: string
+  target?: React.HTMLAttributeAnchorTarget
+  rel?: string
   className?: string
   children: React.ReactNode
 }
@@ -14,9 +16,9 @@ export const buttonVariants = {
   hero: 'bg-white text-custom-gray rounded-full hover:bg-custom-e4',
 }
 
-export default function Button({variant = 'default', href, className, children}: Props) {
+export default function Button({variant = 'default', href, target, rel, className, children}: Props) {
   return (
-    <Link href={href} className={cn([buttonVariants.base, buttonVariants[variant]], className)}>
+    <Link href={href} target={target} rel={rel} className={cn([buttonVariants.base, buttonVariants[variant]], className)}>
       {children}
     </Link>
   )

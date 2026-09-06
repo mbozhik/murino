@@ -1,7 +1,8 @@
 'use client'
 
 import {cn} from '@/lib/utils'
-import {useState} from 'react'
+import {linksData} from '@/lib/data'
+import {useEffect, useState} from 'react'
 import Heading from '#/UI/Heading'
 import Button from '#/UI/Button'
 
@@ -9,40 +10,67 @@ const fieldSizes = ['20x40', '40x70']
 const fieldButtons = fieldSizes.map((size) => ({size}))
 
 const priceData = {
-  '20x40': {
+  regular: {
     workdays: {
       title: 'БУДНИЕ ДНИ',
       schedule: [
-        {time: '07:00 - 14:00', price: '3500'},
-        {time: '14:00 - 17:00', price: '5000'},
-        {time: '17:00 - 23:00', price: '6500'},
-        {time: '23:00 - 07:00', price: '5000'},
+        {time: '07:00 - 14:00', price: 3500},
+        {time: '14:00 - 17:00', price: 5000},
+        {time: '17:00 - 23:00', price: 6500},
+        {time: '23:00 - 07:00', price: 5000},
       ],
     },
     weekends: {
       title: 'ВЫХОДНЫЕ ДНИ',
-      schedule: [{time: 'Весь день', price: '5000'}],
+      schedule: [{time: 'Весь день', price: 5000}],
     },
   },
-  '40x70': {
+  september: {
     workdays: {
       title: 'БУДНИЕ ДНИ',
       schedule: [
-        {time: '07:00 - 14:00', price: '10500'},
-        {time: '14:00 - 17:00', price: '15000'},
-        {time: '17:00 - 23:00', price: '19500'},
-        {time: '23:00 - 07:00', price: '15000'},
+        {time: '07:00 - 14:00', price: 3500},
+        {time: '14:00 - 17:00', price: 4000},
+        {time: '17:00 - 23:00', price: 6000},
+        {time: '23:00 - 07:00', price: 5000},
       ],
     },
     weekends: {
       title: 'ВЫХОДНЫЕ ДНИ',
-      schedule: [{time: 'Весь день', price: '15000'}],
+      schedule: [{time: 'Весь день', price: 6000}],
+    },
+  },
+  winter: {
+    workdays: {
+      title: 'БУДНИЕ ДНИ',
+      schedule: [
+        {time: '07:00 - 14:00', price: 4000},
+        {time: '14:00 - 17:00', price: 5000},
+        {time: '17:00 - 23:00', price: 7000},
+        {time: '23:00 - 07:00', price: 6000},
+      ],
+    },
+    weekends: {
+      title: 'ВЫХОДНЫЕ ДНИ',
+      schedule: [
+        {time: 'Суббота', price: 7000},
+        {time: 'Воскресенье', price: 6000},
+      ],
     },
   },
 }
 
 export default function Prices() {
   const [selectedField, setSelectedField] = useState('20x40')
+  const [season, setSeason] = useState<keyof typeof priceData>('september')
+
+  useEffect(() => {
+    const month = Number(new Intl.DateTimeFormat('en-US', {month: 'numeric', timeZone: 'Europe/Moscow'}).format(new Date()))
+    setSeason(month === 9 ? 'september' : month >= 10 || month <= 4 ? 'winter' : 'regular')
+  }, [])
+
+  const prices = priceData[season]
+  const priceMultiplier = selectedField === '40x70' ? 3 : 1
 
   return (
     <section data-section="prices-index" id="prices" className={cn('scroll-m-10', 'space-y-10 xl:space-y-7 sm:space-y-5')}>
@@ -61,7 +89,7 @@ export default function Prices() {
           ))}
         </div>
 
-        {Object.values(priceData[selectedField]).map(({title, schedule}, index) => (
+        {Object.values(prices).map(({title, schedule}, index) => (
           <div key={index} className="flex flex-col gap-4 xl:gap-3 sm:gap-1.5">
             <h1 className="text-2xl xl:text-xl sm:text-lg font-medium text-center uppercase text-custom-gray">{title}</h1>
 
@@ -69,16 +97,19 @@ export default function Prices() {
               <div key={itemIndex} className="flex items-center justify-between text-3xl xl:text-2xl sm:text-lg !leading-tight font-book text-custom-gray">
                 <div className="text-center w-1/2 py-4 xl:py-3 sm:py-2.5 sm:px-2 duration-200 bg-custom-e4 text-custom-gray rounded-smallest">{time}</div>
                 <span>
-                  {price} ₽<span className="text-custom-95">/ЧАС</span>
+                  {price * priceMultiplier} ₽<span className="text-custom-95">/ЧАС</span>
                 </span>
               </div>
             ))}
           </div>
         ))}
 
-        <Button variant="hero" href="#" className="text-white bg-custom-green duration-200 hover:bg-custom-gray">
-          Забронировать
-        </Button>
+        <div className="flex flex-col gap-2">
+          <Button variant="hero" href={linksData.booking.href} target="_blank" rel="noopener noreferrer" className="text-white bg-custom-green duration-200 hover:bg-custom-gray">
+            {linksData.booking.text}
+          </Button>
+          {selectedField === '20x40' && <p className="text-center text-base sm:text-sm text-custom-gray">Предварительное бронирование обязательно.</p>}
+        </div>
       </div>
     </section>
   )
